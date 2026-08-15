@@ -1131,6 +1131,67 @@
             box-shadow: 0 8px 25px rgba(201, 168, 76, 0.3);
         }
 
+        /* ---------- PAGINACIÓN ---------- */
+        .paginacion {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 30px;
+            padding: 16px 0;
+            flex-wrap: wrap;
+        }
+
+        .btn-pagina {
+            background: var(--primary);
+            color: var(--white);
+            border: 2px solid var(--gold);
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-pagina:hover:not(:disabled) {
+            background: var(--gold);
+            color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(201, 168, 76, 0.3);
+        }
+
+        .btn-pagina:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none;
+            background: var(--gray-200);
+            border-color: var(--gray-200);
+            color: var(--gray-600);
+        }
+
+        .info-pagina {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 480px) {
+            .paginacion {
+                gap: 12px;
+            }
+            .btn-pagina {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+            .info-pagina {
+                font-size: 0.8rem;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
         /* ---------- CONTACTO ---------- */
         #contacto {
             background: var(--white);
@@ -2273,6 +2334,11 @@
             const preguntaInput = document.getElementById('preguntaInput');
             const preguntasContainer = document.getElementById('preguntas-container');
 
+            // ---------- VARIABLES DE PAGINACIÓN ----------
+            let todasLasPreguntas = [];
+            let paginaActual = 1;
+            const preguntasPorPagina = 3;
+
             // ---------- MENÚ HAMBURGUESA ----------
             hamburger.addEventListener('click', function() {
                 navMenu.classList.toggle('active');
@@ -2311,7 +2377,7 @@
                 formContacto.reset();
             });
 
-            // ---------- PREGUNTAS: CARGAR DESDE GOOGLE SHEETS ----------
+            // ---------- PREGUNTAS: CARGAR CON PAGINACIÓN ----------
             async function cargarPreguntas() {
                 try {
                     const response = await fetch(SCRIPT_URL);
@@ -2328,23 +2394,10 @@
                         return;
                     }
 
-                    let html = '';
-                    data.forEach(item => {
-                        html += `
-                            <div class="pregunta-item">
-                                <div class="pregunta">
-                                    <i class="fas fa-question-circle"></i>
-                                    <strong>${escapeHtml(item.pregunta)}</strong>
-                                </div>
-                                <div class="respuesta">
-                                    <i class="fas fa-check-circle"></i>
-                                    ${escapeHtml(item.respuesta)}
-                                </div>
-                                ${item.fecha ? `<div class="fecha"><i class="far fa-calendar-alt"></i> ${formatFecha(item.fecha)}</div>` : ''}
-                            </div>
-                        `;
-                    });
-                    preguntasContainer.innerHTML = html;
+                    // Guardar todas las preguntas (ya vienen ordenadas de más reciente a más antigua)
+                    todasLasPreguntas = data;
+                    paginaActual = 1;
+                    mostrarPagina(paginaActual);
 
                 } catch (error) {
                     console.error('Error cargando preguntas:', error);
@@ -2357,6 +2410,61 @@
                     `;
                 }
             }
+
+            function mostrarPagina(numeroPagina) {
+                const totalPaginas = Math.ceil(todasLasPreguntas.length / preguntasPorPagina);
+                
+                // Validar que la página esté dentro del rango
+                if (numeroPagina < 1) numeroPagina = 1;
+                if (numeroPagina > totalPaginas) numeroPagina = totalPaginas;
+                paginaActual = numeroPagina;
+
+                // Calcular índice de inicio y fin
+                const inicio = (paginaActual - 1) * preguntasPorPagina;
+                const fin = inicio + preguntasPorPagina;
+                const preguntasPagina = todasLasPreguntas.slice(inicio, fin);
+
+                // Generar HTML de las preguntas
+                let html = '';
+                preguntasPagina.forEach(item => {
+                    html += `
+                        <div class="pregunta-item">
+                            <div class="pregunta">
+                                <i class="fas fa-question-circle"></i>
+                                <strong>${escapeHtml(item.pregunta)}</strong>
+                            </div>
+                            <div class="respuesta">
+                                <i class="fas fa-check-circle"></i>
+                                ${escapeHtml(item.respuesta)}
+                            </div>
+                            ${item.fecha ? `<div class="fecha"><i class="far fa-calendar-alt"></i> ${formatFecha(item.fecha)}</div>` : ''}
+                        </div>
+                    `;
+                });
+
+                // Agregar controles de paginación (solo si hay más de 1 página)
+                if (totalPaginas > 1) {
+                    html += `
+                        <div class="paginacion">
+                            <button class="btn-pagina" onclick="cambiarPagina(${paginaActual - 1})" ${paginaActual <= 1 ? 'disabled' : ''}>
+                                <i class="fas fa-chevron-left"></i> Anterior
+                            </button>
+                            <span class="info-pagina">Página ${paginaActual} de ${totalPaginas}</span>
+                            <button class="btn-pagina" onclick="cambiarPagina(${paginaActual + 1})" ${paginaActual >= totalPaginas ? 'disabled' : ''}>
+                                Siguiente <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    `;
+                }
+
+                preguntasContainer.innerHTML = html;
+            }
+
+            // Exponer la función al ámbito global para que los botones la encuentren
+            window.cambiarPagina = function(nuevaPagina) {
+                mostrarPagina(nuevaPagina);
+                document.getElementById('preguntas').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            };
 
             // ---------- PREGUNTAS: ENVIAR NUEVA ----------
             formPregunta.addEventListener('submit', async function(e) {
