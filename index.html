@@ -7,7 +7,7 @@
     <meta name="description" content="Administración de consorcios en CABA. Lic. Sebastián R. Espeche - RPA 20066. Gestión profesional y transparente.">
     <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!-- Google Fonts para tipografías elegantes -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* ---------- RESET Y VARIABLES ---------- */
@@ -224,7 +224,7 @@
             transition: var(--transition);
         }
 
-        /* ---------- HERO CON EDIFICIO ---------- */
+        /* ---------- HERO ---------- */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -243,7 +243,7 @@
             right: 0;
             bottom: 0;
             background: url('edificio-naken.jpg') center center/cover no-repeat;
-            opacity: 0.15;
+            opacity: 0.12;
             z-index: 0;
         }
 
@@ -303,18 +303,39 @@
         .hero-subtitle {
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 1.4rem;
-            color: var(--gray-600);
-            margin-bottom: 24px;
-            font-weight: 400;
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 16px;
+            font-weight: 600;
         }
 
-        .hero-text p {
+        .hero-subtitle span {
+            color: var(--gold);
+        }
+
+        .hero-text .hero-desc {
             font-size: 1.1rem;
             color: var(--gray-600);
             max-width: 520px;
-            margin-bottom: 32px;
+            margin-bottom: 8px;
             line-height: 1.8;
+        }
+
+        .hero-text .hero-desc strong {
+            color: var(--primary);
+        }
+
+        .hero-phrase {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin: 16px 0 24px;
+            padding: 16px 24px;
+            background: rgba(201, 168, 76, 0.08);
+            border-radius: 12px;
+            border-left: 4px solid var(--gold);
+            max-width: 520px;
         }
 
         .hero-buttons {
@@ -384,13 +405,13 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .hero-logo-large img {
-            max-width: 200px;
+            max-width: 180px;
             height: auto;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .hero-welcome {
@@ -399,6 +420,7 @@
             color: var(--primary);
             text-align: center;
             font-weight: 600;
+            line-height: 1.3;
         }
 
         .hero-welcome span {
@@ -538,12 +560,18 @@
         .about-text h3 {
             font-family: 'Playfair Display', serif;
             font-size: 2rem;
-            margin-bottom: 16px;
+            margin-bottom: 8px;
             color: var(--primary);
         }
 
         .about-text h3 span {
             color: var(--gold);
+        }
+
+        .about-text .subtitle-about {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            margin-bottom: 20px;
         }
 
         .about-text p {
@@ -552,15 +580,65 @@
             line-height: 1.8;
         }
 
+        .about-text .highlight-box {
+            background: var(--gray-100);
+            padding: 20px 24px;
+            border-radius: 12px;
+            border-left: 4px solid var(--gold);
+            margin: 20px 0;
+        }
+
+        .about-text .highlight-box i {
+            color: var(--gold);
+            font-size: 1.4rem;
+            margin-right: 12px;
+        }
+
+        .about-text .highlight-box strong {
+            color: var(--primary);
+            display: block;
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+        }
+
+        .about-text .highlight-box p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+
+        .about-text ul {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0 20px;
+        }
+
+        .about-text ul li {
+            padding: 6px 0;
+            color: var(--gray-600);
+            font-size: 0.95rem;
+        }
+
+        .about-text ul li i {
+            color: var(--gold);
+            margin-right: 10px;
+            width: 20px;
+        }
+
         .about-text .matricula {
             display: inline-block;
             background: var(--gray-100);
-            padding: 8px 20px;
+            padding: 12px 24px;
             border-radius: 8px;
             font-weight: 500;
             color: var(--primary);
             border-left: 4px solid var(--gold);
             margin-top: 12px;
+            font-size: 0.95rem;
+        }
+
+        .about-text .matricula i {
+            color: var(--gold);
+            margin-right: 8px;
         }
 
         .about-stats {
@@ -695,7 +773,180 @@
             margin-top: 8px;
         }
 
+        /* ---------- ROL DEL ADMINISTRADOR ---------- */
+        #rol-administrador {
+            background: var(--gray-100);
+        }
+
+        .admin-roles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .role-card {
+            background: var(--white);
+            padding: 32px 28px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+        }
+
+        .role-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--gold);
+        }
+
+        .role-card i {
+            font-size: 2.2rem;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+
+        .role-card h4 {
+            font-size: 1.15rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .role-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .role-card ul li {
+            padding: 6px 0;
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .role-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .role-card ul li i {
+            font-size: 0.7rem;
+            margin-right: 10px;
+            color: var(--gold);
+        }
+
+        .legal-note {
+            margin-top: 40px;
+            background: var(--white);
+            padding: 30px 40px;
+            border-radius: var(--radius);
+            border-left: 4px solid var(--gold);
+            box-shadow: var(--shadow);
+        }
+
+        .legal-note h4 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .legal-note h4 i {
+            color: var(--gold);
+            margin-right: 10px;
+        }
+
+        .legal-note p {
+            color: var(--gray-600);
+            line-height: 1.8;
+        }
+
+        .legal-note small {
+            color: var(--gray-600);
+            font-size: 0.85rem;
+        }
+
+        .legal-note .highlight-legal {
+            background: rgba(201, 168, 76, 0.08);
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-top: 12px;
+        }
+
+        /* ---------- FILOSOFÍA ---------- */
+        #filosofia {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        #filosofia .section-title h2 {
+            color: var(--white);
+        }
+
+        #filosofia .section-title h2 span {
+            color: var(--gold);
+        }
+
+        #filosofia .section-title .subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .filosofia-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .filosofia-text p {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .filosofia-text .frase-destacada {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.6rem;
+            color: var(--gold);
+            padding: 24px 0;
+            border-top: 2px solid rgba(201, 168, 76, 0.2);
+            border-bottom: 2px solid rgba(201, 168, 76, 0.2);
+            margin: 20px 0;
+        }
+
+        .filosofia-text ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 16px;
+        }
+
+        .filosofia-text ul li {
+            padding: 8px 0;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+        }
+
+        .filosofia-text ul li i {
+            color: var(--gold);
+            margin-right: 12px;
+        }
+
+        .filosofia-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .filosofia-image i {
+            font-size: 8rem;
+            color: var(--gold);
+            opacity: 0.3;
+        }
+
         /* ---------- TESTIMONIOS ---------- */
+        #testimonios {
+            background: var(--white);
+        }
+
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -703,10 +954,9 @@
         }
 
         .testimonial-card {
-            background: var(--white);
+            background: var(--gray-100);
             padding: 32px;
             border-radius: var(--radius);
-            box-shadow: var(--shadow);
             border: 1px solid var(--gray-200);
             transition: var(--transition);
         }
@@ -783,16 +1033,22 @@
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
             color: var(--primary);
-            margin-bottom: 16px;
+            margin-bottom: 8px;
         }
 
         .contact-info h3 span {
             color: var(--gold);
         }
 
+        .contact-info .subtitle-contact {
+            color: var(--gray-600);
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+
         .contact-info p {
             color: var(--gray-600);
-            margin-bottom: 28px;
+            margin-bottom: 20px;
             line-height: 1.8;
         }
 
@@ -959,6 +1215,63 @@
             color: #e74c3c;
         }
 
+        /* ---------- PÁGINAS LEGALES (ocultas por defecto) ---------- */
+        .legal-page {
+            display: none;
+            padding: 140px 0 80px;
+            background: var(--white);
+            min-height: 100vh;
+        }
+
+        .legal-page.active {
+            display: block;
+        }
+
+        .legal-page h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            color: var(--primary);
+            margin-bottom: 24px;
+        }
+
+        .legal-page h1 span {
+            color: var(--gold);
+        }
+
+        .legal-page h2 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin: 30px 0 16px;
+        }
+
+        .legal-page p {
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .legal-page ul {
+            padding-left: 24px;
+            color: var(--gray-600);
+            line-height: 1.8;
+        }
+
+        .legal-page ul li {
+            margin-bottom: 8px;
+        }
+
+        .legal-page .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: var(--gold);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .legal-page .back-link:hover {
+            color: var(--primary);
+        }
+
         /* ---------- RESPONSIVE ---------- */
         @media (max-width: 1024px) {
             .hero-text h1 {
@@ -966,6 +1279,9 @@
             }
             .about-grid {
                 gap: 40px;
+            }
+            .filosofia-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -975,7 +1291,10 @@
                 text-align: center;
             }
             .hero-text p {
-                margin: 0 auto 32px;
+                margin: 0 auto;
+            }
+            .hero-phrase {
+                margin: 16px auto 24px;
             }
             .hero-buttons {
                 justify-content: center;
@@ -1044,15 +1363,20 @@
             }
 
             .hero-subtitle {
-                font-size: 1.1rem;
+                font-size: 1.3rem;
             }
 
             .hero-logo-large img {
-                max-width: 150px;
+                max-width: 140px;
             }
 
             .hero-welcome {
-                font-size: 1.3rem;
+                font-size: 1.4rem;
+            }
+
+            .hero-phrase {
+                font-size: 1rem;
+                padding: 12px 16px;
             }
 
             .section-title h2 {
@@ -1068,6 +1392,10 @@
             }
 
             .app-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .admin-roles {
                 grid-template-columns: 1fr;
             }
 
@@ -1095,6 +1423,10 @@
             .logo-img {
                 height: 40px;
             }
+
+            .legal-note {
+                padding: 20px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1116,7 +1448,7 @@
             }
 
             .hero-image img {
-                max-height: 250px;
+                max-height: 220px;
             }
 
             .about-stats {
@@ -1125,6 +1457,10 @@
 
             .stat-item {
                 padding: 14px;
+            }
+
+            .hero-welcome {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -1139,7 +1475,7 @@
     <!-- HEADER -->
     <header id="header">
         <div class="container nav-container">
-            <a href="#" class="logo-wrapper">
+            <a href="index.html" class="logo-wrapper">
                 <img src="logo-naken.png" alt="Administración NAKEN" class="logo-img" id="logoHeader">
                 <div class="logo-text">
                     <span class="logo-main">Admin<span>istración</span> NAKEN</span>
@@ -1147,11 +1483,11 @@
                 </div>
             </a>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#app">App</a></li>
-                <li><a href="#testimonios">Testimonios</a></li>
-                <li><a href="#contacto" class="nav-cta">Contactar</a></li>
+                <li><a href="index.html#servicios">Servicios</a></li>
+                <li><a href="index.html#nosotros">Nosotros</a></li>
+                <li><a href="index.html#app">App</a></li>
+                <li><a href="index.html#rol-administrador">Rol del Administrador</a></li>
+                <li><a href="index.html#contacto" class="nav-cta">Contactar</a></li>
             </ul>
             <div class="hamburger" id="hamburger" aria-label="Menú">
                 <span></span>
@@ -1175,8 +1511,20 @@
                     </div>
                 </div>
 
-                <p class="hero-subtitle">"Su consorcio, nuestro legado"</p>
-                <p>Más de 10 años de experiencia en la administración de consorcios en la Ciudad Autónoma de Buenos Aires. Gestión profesional, transparente y con un enfoque humano.</p>
+                <p class="hero-subtitle"><span>"Su consorcio, nuestro legado"</span></p>
+
+                <p class="hero-desc">
+                    <strong>Lic. Sebastián R. Espeche</strong> · Capitán de Corbeta (RE) · RPA 20066
+                </p>
+                <p class="hero-desc">
+                    Más de 25 años en mantenimiento edilicio y experiencia en administración de viviendas fiscales del Estado Argentino.
+                </p>
+
+                <div class="hero-phrase">
+                    <i class="fas fa-quote-left" style="color: var(--gold); margin-right: 8px;"></i>
+                    Administrar un consorcio no es solo gestionar cuentas. Es construir comunidad.
+                </div>
+
                 <div class="hero-buttons">
                     <a href="#contacto" class="btn-primary"><i class="fas fa-paper-plane"></i> Solicitar información</a>
                     <a href="#servicios" class="btn-secondary">Conocer servicios</a>
@@ -1208,14 +1556,14 @@
                     <p>Consulta de expensas, gestión de reclamos y comunicación directa con la administración desde tu celular.</p>
                 </div>
                 <div class="service-card">
-                    <div class="icon-wrapper"><i class="fas fa-gavel"></i></div>
+                    <div class="icon-wrapper"><i class="fas fa-handshake"></i></div>
                     <h3>Gestión de Conflictos</h3>
                     <p>Mediación y resolución de disputas entre vecinos basada en la legislación vigente y el reglamento interno.</p>
                 </div>
                 <div class="service-card">
-                    <div class="icon-wrapper"><i class="fas fa-file-signature"></i></div>
-                    <h3>Asesoría Legal</h3>
-                    <p>Consultoría jurídica especializada en propiedad horizontal y normativa de la Ciudad de Buenos Aires.</p>
+                    <div class="icon-wrapper"><i class="fas fa-file-invoice"></i></div>
+                    <h3>Gestión Financiera</h3>
+                    <p>Conciliaciones bancarias, pago a proveedores, fondos de reserva y administración de cuentas.</p>
                 </div>
             </div>
         </div>
@@ -1226,36 +1574,134 @@
         <div class="container">
             <div class="section-title">
                 <h2>Sobre <span>Nosotros</span></h2>
-                <p class="subtitle">Conocé al equipo que está detrás de la gestión de tu consorcio</p>
+                <p class="subtitle">Conocé la historia y los valores detrás de Administración NAKEN</p>
                 <div class="section-divider"></div>
             </div>
             <div class="about-grid">
                 <div class="about-text">
                     <h3>Administración <span>NAKEN</span></h3>
-                    <p><strong>Lic. Sebastián R. Espeche</strong> es el fundador y administrador de la empresa, con más de una década de experiencia en la gestión de consorcios en la Ciudad Autónoma de Buenos Aires.</p>
-                    <p>Nuestra filosofía se basa en la transparencia, la comunicación fluida y el compromiso con cada uno de los propietarios que confían en nosotros.</p>
-                    <div class="matricula">
-                        <i class="fas fa-id-card"></i> RPA N° 20066 - Matriculado en el Registro de Administradores de Consorcios de la Ciudad de Buenos Aires
+                    <p class="subtitle-about"><strong>NAKEN</strong> nace de la fusión de los nombres de mis hijas <strong>Naomi y Kendra</strong>. Porque para mí, administrar un consorcio es como cuidar de una familia: requiere cercanía, compromiso y transparencia.</p>
+
+                    <p>Soy <strong>Lic. Sebastián R. Espeche</strong>, Capitán de Corbeta de la Armada Argentina (RE). Mi formación militar me enseñó el valor de la honestidad, la disciplina y el respeto por la ley.</p>
+
+                    <div class="highlight-box">
+                        <i class="fas fa-shield-alt"></i>
+                        <strong>Mi trayectoria profesional</strong>
+                        <p>Más de 25 años en mantenimiento de edificios con capacitaciones en electricidad, gas y plomería. Además, cuento con experiencia en la administración de viviendas fiscales, propiedad del Estado Argentino bajo administración de la Armada Argentina.</p>
                     </div>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <div class="number">10<span>+</span></div>
-                            <div class="label">Años de experiencia</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="number">50<span>+</span></div>
-                            <div class="label">Consorcios gestionados</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="number">98<span>%</span></div>
-                            <div class="label">Satisfacción de clientes</div>
-                        </div>
+
+                    <p><strong>¿Qué me diferencia?</strong></p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> 25+ años en mantenimiento edilicio</li>
+                        <li><i class="fas fa-check-circle"></i> Experiencia administrando edificios del Estado</li>
+                        <li><i class="fas fa-check-circle"></i> Licenciado en Relaciones Internacionales (resolución de conflictos)</li>
+                        <li><i class="fas fa-check-circle"></i> Técnico en electricidad, gas y plomería</li>
+                        <li><i class="fas fa-check-circle"></i> Propietario: entiendo lo que implica pagar expensas</li>
+                    </ul>
+
+                    <p><strong>Mi filosofía:</strong> el consorcio es de los propietarios, no del administrador. Yo soy solo una figura legal que administra en representación del consorcio.</p>
+
+                    <div class="matricula">
+                        <i class="fas fa-id-card"></i> RPA N° 20066 · Registro de Administradores de Consorcios de CABA
                     </div>
                 </div>
                 <div class="about-image">
                     <img src="edificio-naken.jpg" alt="Edificio Administración NAKEN">
                     <div class="placeholder-text"><i class="fas fa-building"></i> Administración NAKEN</div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FILOSOFÍA Y VALORES -->
+    <section id="filosofia">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mi <span>Filosofía</span></h2>
+                <p class="subtitle">La honestidad y la transparencia como base de toda gestión</p>
+                <div class="section-divider"></div>
+            </div>
+            <div class="filosofia-grid">
+                <div class="filosofia-text">
+                    <p>En mis años de servicio en la Armada Argentina aprendí que <strong>hacer las cosas bien</strong> es el camino más corto para ganarse la confianza de las personas.</p>
+
+                    <div class="frase-destacada">
+                        "Es más fácil hacer las cosas bien para ser recomendado, que hacerlas mal y ser evitado."
+                    </div>
+
+                    <p>Por eso en <strong>Administración NAKEN</strong> cada decisión se toma con:</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> <strong>Transparencia</strong> - Cuentas claras y rendición de cuentas periódica</li>
+                        <li><i class="fas fa-check"></i> <strong>Honestidad</strong> - Sin letra chica, sin sorpresas</li>
+                        <li><i class="fas fa-check"></i> <strong>Disciplina</strong> - La misma que aprendí en 25 años de servicio</li>
+                        <li><i class="fas fa-check"></i> <strong>Cercanía</strong> - Porque NAKEN significa familia</li>
+                    </ul>
+                </div>
+                <div class="filosofia-image">
+                    <i class="fas fa-handshake"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROL DEL ADMINISTRADOR -->
+    <section id="rol-administrador">
+        <div class="container">
+            <div class="section-title">
+                <h2>¿Qué hace un <span>Administrador de Consorcios?</span></h2>
+                <p class="subtitle">Entendé por qué esta figura es clave para la salud financiera y convivencial de tu edificio</p>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="admin-roles">
+                <div class="role-card">
+                    <i class="fas fa-coins"></i>
+                    <h4>Gestión Financiera</h4>
+                    <ul>
+                        <li><i class="fas fa-chevron-right"></i> Liquidación de expensas</li>
+                        <li><i class="fas fa-chevron-right"></i> Conciliaciones bancarias</li>
+                        <li><i class="fas fa-chevron-right"></i> Pago a proveedores</li>
+                        <li><i class="fas fa-chevron-right"></i> Administración de fondos de reserva</li>
+                        <li><i class="fas fa-chevron-right"></i> Movimientos bancarios y cuentas</li>
+                    </ul>
+                </div>
+                <div class="role-card">
+                    <i class="fas fa-tools"></i>
+                    <h4>Mantenimiento y Seguridad</h4>
+                    <ul>
+                        <li><i class="fas fa-chevron-right"></i> Supervisión de ascensores y seguros</li>
+                        <li><i class="fas fa-chevron-right"></i> Control de matafuegos y vencimientos</li>
+                        <li><i class="fas fa-chevron-right"></i> Análisis de tanques de agua</li>
+                        <li><i class="fas fa-chevron-right"></i> Mantenimiento de áreas comunes</li>
+                        <li><i class="fas fa-chevron-right"></i> Seguro de responsabilidad civil</li>
+                        <li><i class="fas fa-chevron-right"></i> Anticipar gastos para evitar impactos fuertes</li>
+                    </ul>
+                </div>
+                <div class="role-card">
+                    <i class="fas fa-file-contract"></i>
+                    <h4>Gestión Administrativa</h4>
+                    <ul>
+                        <li><i class="fas fa-chevron-right"></i> Pago de sueldos y aportes (F931)</li>
+                        <li><i class="fas fa-chevron-right"></i> Liquidación de cargas sociales</li>
+                        <li><i class="fas fa-chevron-right"></i> Mediación de conflictos vecinales</li>
+                        <li><i class="fas fa-chevron-right"></i> Asesoría en reglamento interno</li>
+                        <li><i class="fas fa-chevron-right"></i> Cumplimiento de Ley 941</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="legal-note">
+                <h4><i class="fas fa-scale-balanced"></i> ¿Sabías que podés administrar tu edificio de forma honoraria?</h4>
+                <p>La <strong>Ley 941</strong> y el <strong>Código Civil</strong> permiten que un propietario administre el consorcio sin cobrar honorarios. Es una opción válida para edificios pequeños.</p>
+
+                <div class="highlight-legal">
+                    <p><strong>Artículos 26 y 27 de la Ley 941 - CABA</strong><br>
+                    El administrador saliente tiene <strong>10 días</strong> para entregar toda la documentación al Consejo de Propietarios (si existe) o al nuevo administrador.</p>
+                </div>
+
+                <p style="margin-top: 16px;">La complejidad de la gestión (bancaria, legal, técnica) hace que muchos propietarios prefieran profesionales matriculados. Mi objetivo es que los propietarios <strong>entiendan</strong> el valor de este servicio y sepan que el cobro de honorarios tiene una razón de ser.</p>
+
+                <p style="margin-top: 12px;"><small>Si tu consorcio quedó acéfalo y necesitás ayuda urgente, <a href="#contacto" style="color: var(--gold); font-weight: 600;">contactame</a> y te asesoro sin compromiso.</small></p>
             </div>
         </div>
     </section>
@@ -1294,6 +1740,10 @@
                     <span class="app-badge">Transparencia</span>
                 </div>
             </div>
+            <div style="text-align: center; margin-top: 40px; color: rgba(255,255,255,0.7);">
+                <p><i class="fas fa-code"></i> App en desarrollo activo · Próximamente disponible</p>
+                <p style="font-size: 0.85rem; margin-top: 4px;">Si querés ser parte de las pruebas, <a href="#contacto" style="color: var(--gold); font-weight: 600;">contactanos</a></p>
+            </div>
         </div>
     </section>
 
@@ -1301,41 +1751,41 @@
     <section id="testimonios">
         <div class="container">
             <div class="section-title">
-                <h2>Lo que dicen <span>nuestros clientes</span></h2>
-                <p class="subtitle">Opiniones de propietarios que confían en nuestra gestión</p>
+                <h2>Experiencia <span>real</span></h2>
+                <p class="subtitle">Trayectoria y reconocimientos a lo largo de mi carrera</p>
                 <div class="section-divider"></div>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <blockquote>"La administración NAKEN transformó por completo la gestión de nuestro consorcio. La transparencia en las expensas y la comunicación constante son excelentes."</blockquote>
+                    <blockquote>"Sebastián demostró una gestión impecable en los edificios a su cargo. Su formación militar se refleja en el orden y la disciplina con que administraba los recursos."</blockquote>
                     <div class="client">
-                        <div class="avatar">MG</div>
+                        <div class="avatar">AA</div>
                         <div>
-                            <div class="name">María González</div>
-                            <div class="role">Propietaria - Palermo</div>
+                            <div class="name">Armada Argentina</div>
+                            <div class="role">Evaluación de desempeño</div>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <blockquote>"La app es un gran diferencial. Poder consultar mis expensas y hacer reclamos desde el celular me da mucha tranquilidad y agilidad."</blockquote>
+                    <blockquote>"Su conocimiento técnico en mantenimiento de edificios es extraordinario. Sabe exactamente qué trabajos son necesarios y cuáles son gastos innecesarios."</blockquote>
                     <div class="client">
-                        <div class="avatar">JR</div>
+                        <div class="avatar">EC</div>
                         <div>
-                            <div class="name">Javier Rodríguez</div>
-                            <div class="role">Propietario - Belgrano</div>
+                            <div class="name">Evaluación técnica</div>
+                            <div class="role">25+ años en mantenimiento</div>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <blockquote>"Sebastián es un profesional de confianza. Siempre está disponible para resolver dudas y su asesoría legal nos ha evitado muchos problemas."</blockquote>
+                    <blockquote>"Como propietario que paga expensas, valoro su transparencia y honestidad. Sabe lo que es estar del otro lado y eso se nota en su gestión."</blockquote>
                     <div class="client">
-                        <div class="avatar">LC</div>
+                        <div class="avatar">SE</div>
                         <div>
-                            <div class="name">Laura Cáceres</div>
-                            <div class="role">Propietaria - Recoleta</div>
+                            <div class="name">Propietario</div>
+                            <div class="role">Experiencia personal</div>
                         </div>
                     </div>
                 </div>
@@ -1354,12 +1804,13 @@
             <div class="contact-wrapper">
                 <div class="contact-info">
                     <h3>Administración <span>NAKEN</span></h3>
-                    <p><strong>Lic. Sebastián R. Espeche</strong><br>RPA N° 20066</p>
-                    <p>Estamos ubicados en la Ciudad Autónoma de Buenos Aires y atendemos consorcios en toda la ciudad.</p>
+                    <p class="subtitle-contact"><strong>Lic. Sebastián R. Espeche</strong> · RPA N° 20066</p>
+                    <p>Atendemos consorcios en toda la Ciudad Autónoma de Buenos Aires.</p>
+
                     <div class="contact-detail">
                         <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
                         <div class="info">
-                            +54 11 1234-5678
+                            (011) 15 5106 2353
                             <small>Lunes a viernes de 9 a 18 hs</small>
                         </div>
                     </div>
@@ -1373,8 +1824,8 @@
                     <div class="contact-detail">
                         <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
                         <div class="info">
-                            CABA, Argentina
-                            <small>Ciudad Autónoma de Buenos Aires</small>
+                            Ciudad Autónoma de Buenos Aires
+                            <small>Argentina</small>
                         </div>
                     </div>
                     <div class="contact-detail">
@@ -1383,6 +1834,13 @@
                             RPA N° 20066
                             <small>Registro de Administradores de Consorcios</small>
                         </div>
+                    </div>
+
+                    <div style="margin-top: 24px; padding: 16px; background: var(--gray-100); border-radius: 10px; border-left: 4px solid var(--gold);">
+                        <p style="font-size: 0.9rem; margin-bottom: 0;">
+                            <i class="fas fa-quote-left" style="color: var(--gold);"></i>
+                            <em>"Administrar un consorcio no es solo gestionar cuentas. Es construir comunidad."</em>
+                        </p>
                     </div>
                 </div>
                 <form class="contact-form" id="formContacto">
@@ -1412,7 +1870,7 @@
                         <li><a href="#servicios">Liquidación de expensas</a></li>
                         <li><a href="#servicios">App para propietarios</a></li>
                         <li><a href="#servicios">Gestión de conflictos</a></li>
-                        <li><a href="#servicios">Asesoría legal</a></li>
+                        <li><a href="#servicios">Gestión financiera</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -1420,17 +1878,16 @@
                     <ul>
                         <li><a href="#nosotros">Nosotros</a></li>
                         <li><a href="#app">App NAKEN</a></li>
-                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#rol-administrador">Rol del Administrador</a></li>
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Legal</h4>
                     <ul>
-                        <li><a href="#">Aviso legal</a></li>
-                        <li><a href="#">Política de privacidad</a></li>
-                        <li><a href="#">Términos de uso</a></li>
-                        <li><a href="#">Reglamento interno</a></li>
+                        <li><a href="#" onclick="mostrarLegal('privacidad')">Política de Privacidad</a></li>
+                        <li><a href="#" onclick="mostrarLegal('reglamento')">Reglamento Interno</a></li>
+                        <li><a href="#" onclick="mostrarLegal('aviso')">Aviso Legal</a></li>
                     </ul>
                 </div>
             </div>
@@ -1440,6 +1897,155 @@
             </div>
         </div>
     </footer>
+
+    <!-- PÁGINA: POLÍTICA DE PRIVACIDAD -->
+    <div class="legal-page" id="legal-privacidad">
+        <div class="container">
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Volver al inicio</a>
+            <h1>Política de <span>Privacidad</span></h1>
+
+            <p><strong>Administración NAKEN</strong>, en cumplimiento de la Ley 25.326 de Protección de Datos Personales y su Decreto Reglamentario 1558/2001, informa a los propietarios y usuarios de este sitio web sobre su Política de Privacidad.</p>
+
+            <h2>1. Responsable del Tratamiento</h2>
+            <p><strong>Responsable:</strong> Lic. Sebastián R. Espeche<br>
+            <strong>RPA:</strong> 20066<br>
+            <strong>Email:</strong> gerencia@administracionnaken.com.ar</p>
+
+            <h2>2. Datos que recopilamos</h2>
+            <p>Recopilamos la siguiente información personal cuando los propietarios se comunican con nosotros:</p>
+            <ul>
+                <li>Nombre y apellido</li>
+                <li>Correo electrónico</li>
+                <li>Número de teléfono</li>
+                <li>Datos del consorcio (ubicación, cantidad de unidades)</li>
+            </ul>
+
+            <h2>3. Finalidad del tratamiento</h2>
+            <p>Los datos personales recopilados serán utilizados exclusivamente para:</p>
+            <ul>
+                <li>Gestionar consultas y solicitudes de información</li>
+                <li>Administrar la relación con los consorcios</li>
+                <li>Enviar información relevante sobre la gestión</li>
+                <li>Dar cumplimiento a obligaciones legales (Ley 941)</li>
+            </ul>
+
+            <h2>4. Bases legales del tratamiento</h2>
+            <p>El tratamiento de datos se fundamenta en:</p>
+            <ul>
+                <li>La ejecución de un contrato o relación profesional</li>
+                <li>El consentimiento explícito del propietario</li>
+                <li>Obligaciones legales (Ley 941, Código Civil)</li>
+            </ul>
+
+            <h2>5. Conservación de datos</h2>
+            <p>Los datos personales se conservarán durante el tiempo necesario para cumplir con las finalidades descritas y durante los plazos legales establecidos (10 años según Ley 941).</p>
+
+            <h2>6. Derechos de los propietarios</h2>
+            <p>Los propietarios tienen derecho a:</p>
+            <ul>
+                <li>Acceder a sus datos personales</li>
+                <li>Solicitar la rectificación de datos inexactos</li>
+                <li>Solicitar la supresión de sus datos</li>
+                <li>Oponerse al tratamiento de sus datos</li>
+                <li>Solicitar la portabilidad de sus datos</li>
+            </ul>
+            <p>Para ejercer estos derechos, enviar un email a: <strong>gerencia@administracionnaken.com.ar</strong></p>
+
+            <h2>7. Seguridad</h2>
+            <p>Implementamos medidas de seguridad técnicas y organizativas para proteger los datos personales contra acceso no autorizado, pérdida o destrucción.</p>
+
+            <h2>8. Cambios en esta política</h2>
+            <p>Nos reservamos el derecho de actualizar esta Política de Privacidad. Los cambios serán publicados en esta página.</p>
+
+            <p><small>Última actualización: Agosto 2026</small></p>
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Volver al inicio</a>
+        </div>
+    </div>
+
+    <!-- PÁGINA: REGLAMENTO INTERNO -->
+    <div class="legal-page" id="legal-reglamento">
+        <div class="container">
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Volver al inicio</a>
+            <h1>Reglamento <span>Interno</span></h1>
+
+            <p>El <strong>Reglamento Interno</strong> es el documento que establece las normas de convivencia y uso de las áreas comunes dentro de un consorcio. Es de cumplimiento obligatorio para todos los propietarios e inquilinos.</p>
+
+            <h2>¿Qué contiene un Reglamento Interno?</h2>
+            <ul>
+                <li><strong>Horarios de uso</strong> de áreas comunes (salón de fiestas, parrilla, lavadero)</li>
+                <li><strong>Normas de convivencia</strong> (ruidos, mascotas, basura)</li>
+                <li><strong>Uso de unidades funcionales</strong> (vivienda, oficina, etc.)</li>
+                <li><strong>Procedimientos para reclamos</strong> y resolución de conflictos</li>
+                <li><strong>Obligaciones de propietarios e inquilinos</strong></li>
+                <li><strong>Sanciones</strong> por incumplimiento</li>
+            </ul>
+
+            <h2>¿Es obligatorio?</h2>
+            <p>Sí. Según la <strong>Ley 941</strong> (CABA) y el <strong>Código Civil</strong>, todo consorcio debe tener un reglamento interno aprobado por la Asamblea de Propietarios.</p>
+
+            <h2>¿Qué pasa si mi consorcio no tiene Reglamento Interno?</h2>
+            <p>En ese caso, se aplican las disposiciones de la ley y el Código Civil. Sin embargo, tener un reglamento específico ayuda a prevenir conflictos y establece pautas claras de convivencia.</p>
+
+            <h2>¿Puedo modificar el Reglamento Interno?</h2>
+            <p>Sí, cualquier modificación debe ser aprobada por <strong>mayoría calificada</strong> en Asamblea de Propietarios (según lo establecido en la ley).</p>
+
+            <div style="background: var(--gray-100); padding: 20px; border-radius: 12px; margin: 20px 0; border-left: 4px solid var(--gold);">
+                <p style="margin-bottom: 0;">
+                    <i class="fas fa-lightbulb" style="color: var(--gold);"></i>
+                    <strong>¿Necesitás ayuda para redactar o actualizar tu Reglamento Interno?</strong><br>
+                    En <strong>Administración NAKEN</strong> podemos asesorarte en la elaboración de un reglamento que se ajuste a las necesidades de tu consorcio.
+                </p>
+            </div>
+
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Volver al inicio</a>
+        </div>
+    </div>
+
+    <!-- PÁGINA: AVISO LEGAL -->
+    <div class="legal-page" id="legal-aviso">
+        <div class="container">
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Volver al inicio</a>
+            <h1>Aviso <span>Legal</span></h1>
+
+            <h2>1. Identificación del responsable</h2>
+            <p><strong>Titular:</strong> Lic. Sebastián R. Espeche<br>
+            <strong>RPA:</strong> 20066<br>
+            <strong>Email:</strong> gerencia@administracionnaken.com.ar<br>
+            <strong>Actividad:</strong> Administración de consorcios en CABA</p>
+
+            <h2>2. Objeto del sitio web</h2>
+            <p>Este sitio web tiene como objetivo informar sobre los servicios de administración de consorcios ofrecidos por <strong>Administración NAKEN</strong>, así como proporcionar información útil a propietarios e inquilinos.</p>
+
+            <h2>3. Propiedad intelectual</h2>
+            <p>El diseño, textos, imágenes y código fuente de este sitio web son propiedad de <strong>Administración NAKEN</strong> y están protegidos por las leyes de propiedad intelectual. Queda prohibida su reproducción, distribución o modificación sin autorización expresa.</p>
+
+            <h2>4. Responsabilidad</h2>
+            <p><strong>Administración NAKEN</strong> no se responsabiliza por el uso indebido de la información contenida en este sitio web. La información tiene carácter meramente informativo y puede ser actualizada sin previo aviso.</p>
+
+            <h2>5. Enlaces externos</h2>
+            <p>Este sitio puede contener enlaces a sitios externos. <strong>Administración NAKEN</strong> no se hace responsable del contenido o políticas de privacidad de dichos sitios.</p>
+
+            <h2>6. Legislación aplicable</h2>
+            <p>Este aviso legal se rige por la legislación de la <strong>Ciudad Autónoma de Buenos Aires</strong> y, en lo que corresponda, por la legislación nacional argentina.</p>
+
+            <h2>7. Datos profesionales</h2>
+            <p><strong>Lic. Sebastián R. Espeche</strong><br>
+            Capitán de Corbeta (RE) - Armada Argentina<br>
+            Licenciado en Relaciones Internacionales<br>
+            Matrícula RPA N° 20066<br>
+            Registro de Administradores de Consorcios de CABA</p>
+
+            <div style="background: var(--gray-100); padding: 16px; border-radius: 10px; margin-top: 20px; border-left: 4px solid var(--gold);">
+                <p style="margin-bottom: 0; font-size: 0.9rem;">
+                    <strong>Información de contacto:</strong><br>
+                    Teléfono: (011) 15 5106 2353<br>
+                    Email: gerencia@administracionnaken.com.ar
+                </p>
+            </div>
+
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Volver al inicio</a>
+        </div>
+    </div>
 
     <!-- JAVASCRIPT -->
     <script>
@@ -1457,7 +2063,6 @@
                 navMenu.classList.toggle('active');
             });
 
-            // Cerrar menú al hacer clic en un enlace
             navMenu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', function() {
                     navMenu.classList.remove('active');
@@ -1472,7 +2077,6 @@
                     header.classList.remove('scrolled');
                 }
 
-                // Botón volver arriba
                 if (window.scrollY > 400) {
                     btnVolver.classList.add('visible');
                 } else {
@@ -1496,8 +2100,38 @@
                 form.reset();
             });
 
-            // 5. Animación de entrada para el logo en el hero (opcional)
-            console.log('Administración NAKEN - Su consorcio, nuestro legado');
+            // 5. Mostrar páginas legales
+            window.mostrarLegal = function(tipo) {
+                // Ocultar todas las páginas legales
+                document.querySelectorAll('.legal-page').forEach(el => {
+                    el.classList.remove('active');
+                });
+                // Ocultar el contenido principal
+                document.querySelectorAll('section').forEach(el => {
+                    el.style.display = 'none';
+                });
+                document.querySelector('footer').style.display = 'none';
+                document.querySelector('.hero').style.display = 'none';
+
+                // Mostrar la página legal correspondiente
+                const target = document.getElementById('legal-' + tipo);
+                if (target) {
+                    target.classList.add('active');
+                }
+
+                // Scroll al inicio
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+
+            // 6. Detectar si estamos en una página legal (por hash)
+            if (window.location.hash) {
+                const hash = window.location.hash.replace('#', '');
+                if (hash === 'privacidad' || hash === 'reglamento' || hash === 'aviso') {
+                    setTimeout(function() {
+                        mostrarLegal(hash);
+                    }, 100);
+                }
+            }
 
         })();
     </script>
