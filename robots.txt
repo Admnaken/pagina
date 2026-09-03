@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://administracionnaken.com.ar/sitemap.xml
