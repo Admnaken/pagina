@@ -189,6 +189,97 @@
             box-shadow: 0 4px 25px rgba(15, 30, 46, 0.1);
         }
 
+        /* ---------- CAJAS FLOTANTES: CLIMA Y DÓLAR ---------- */
+        .floating-info {
+            position: fixed;
+            top: 110px;
+            z-index: 900;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: var(--transition), opacity 0.4s, transform 0.4s;
+        }
+
+        .floating-info.hidden {
+            opacity: 0;
+            transform: translateY(-12px);
+            pointer-events: none;
+        }
+
+        .floating-info-left {
+            left: 24px;
+            align-items: flex-start;
+        }
+
+        .floating-info-right {
+            right: 24px;
+            align-items: flex-end;
+        }
+
+        .info-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(180deg, rgba(15, 30, 46, 0.96), rgba(15, 30, 46, 0.9));
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 1px solid rgba(201, 168, 76, 0.4);
+            border-radius: 12px;
+            padding: 10px 16px;
+            box-shadow: 0 8px 22px rgba(15, 30, 46, 0.25);
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .info-box:hover {
+            border-color: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 26px rgba(15, 30, 46, 0.3);
+        }
+
+        .info-box i {
+            color: var(--gold);
+            font-size: 1.05rem;
+            width: 18px;
+            text-align: center;
+        }
+
+        .info-box-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.25;
+        }
+
+        .info-label {
+            font-size: 0.68rem;
+            color: rgba(255, 255, 255, 0.62);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-value {
+            font-size: 0.9rem;
+            color: var(--gold-light);
+            font-weight: 700;
+            letter-spacing: 0.2px;
+        }
+
+        .info-updated {
+            font-size: 0.65rem;
+            color: var(--gray-600);
+            font-style: italic;
+            white-space: nowrap;
+            text-align: right;
+            padding-right: 4px;
+        }
+
+        @media (max-width: 991px) {
+            .floating-info {
+                display: none;
+            }
+        }
+
         .nav-container {
             display: flex;
             justify-content: space-between;
@@ -1809,6 +1900,36 @@
         </div>
     </header>
 
+    <!-- CAJA FLOTANTE: CLIMA -->
+    <div class="floating-info floating-info-left" id="floatingWeather">
+        <div class="info-box">
+            <i class="fas fa-cloud-sun"></i>
+            <div class="info-box-text">
+                <span class="info-label">CABA</span>
+                <span class="info-value" id="weatherValue">Cargando clima…</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CAJA FLOTANTE: DÓLAR -->
+    <div class="floating-info floating-info-right" id="floatingDolar">
+        <div class="info-box">
+            <i class="fas fa-dollar-sign"></i>
+            <div class="info-box-text">
+                <span class="info-label">Dólar Oficial</span>
+                <span class="info-value" id="dolarOficialValue">Cargando…</span>
+            </div>
+        </div>
+        <div class="info-box">
+            <i class="fas fa-coins"></i>
+            <div class="info-box-text">
+                <span class="info-label">Dólar Blue</span>
+                <span class="info-value" id="dolarBlueValue">Cargando…</span>
+            </div>
+        </div>
+        <span class="info-updated" id="infoUpdated"></span>
+    </div>
+
     <!-- HERO -->
     <section class="hero" id="inicio">
         <div class="container hero-content">
@@ -2452,6 +2573,77 @@
             let paginaActual = 1;
             const preguntasPorPagina = 3;
 
+            // ---------- CLIMA CABA (Open-Meteo, sin API key) ----------
+            const weatherValue = document.getElementById('weatherValue');
+            const infoUpdated = document.getElementById('infoUpdated');
+
+            const CODIGOS_CLIMA = {
+                0: 'Despejado', 1: 'Mayormente despejado', 2: 'Parcialmente nublado',
+                3: 'Nublado', 45: 'Niebla', 48: 'Niebla escarchada',
+                51: 'Llovizna débil', 53: 'Llovizna', 55: 'Llovizna intensa',
+                61: 'Lluvia débil', 63: 'Lluvia', 65: 'Lluvia intensa',
+                71: 'Nieve débil', 73: 'Nieve', 75: 'Nieve intensa',
+                80: 'Chubascos débiles', 81: 'Chubascos', 82: 'Chubascos intensos',
+                95: 'Tormenta', 96: 'Tormenta con granizo', 99: 'Tormenta fuerte'
+            };
+
+            function actualizarHoraInfo() {
+                const ahora = new Date();
+                const fecha = ahora.toLocaleDateString('es-AR', { day: '2-digit', month: '2-digit' });
+                const hora = ahora.toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' });
+                infoUpdated.textContent = 'Actualizado ' + fecha + ' · ' + hora + ' hs';
+            }
+
+            async function cargarClima() {
+                try {
+                    const url = 'https://api.open-meteo.com/v1/forecast?latitude=-34.6118&longitude=-58.4173&current=temperature_2m,apparent_temperature,weather_code&timezone=America%2FArgentina%2FBuenos_Aires';
+                    const res = await fetch(url);
+                    if (!res.ok) throw new Error('Respuesta no OK');
+                    const data = await res.json();
+                    const temp = Math.round(data.current.temperature_2m);
+                    const sensacion = Math.round(data.current.apparent_temperature);
+                    const descripcion = CODIGOS_CLIMA[data.current.weather_code] || '';
+                    weatherValue.textContent = temp + '°C (ST ' + sensacion + '°C)' + (descripcion ? ' · ' + descripcion : '');
+                    actualizarHoraInfo();
+                } catch (err) {
+                    weatherValue.textContent = 'No disponible';
+                    console.log('No se pudo obtener el clima:', err);
+                }
+            }
+
+            // ---------- COTIZACIÓN DEL DÓLAR (DolarAPI, sin API key) ----------
+            const dolarOficialValue = document.getElementById('dolarOficialValue');
+            const dolarBlueValue = document.getElementById('dolarBlueValue');
+
+            function formatearARS(numero) {
+                return '$' + Math.round(numero).toLocaleString('es-AR');
+            }
+
+            async function cargarDolar() {
+                try {
+                    const [resOficial, resBlue] = await Promise.all([
+                        fetch('https://dolarapi.com/v1/dolares/oficial'),
+                        fetch('https://dolarapi.com/v1/dolares/blue')
+                    ]);
+                    if (!resOficial.ok || !resBlue.ok) throw new Error('Respuesta no OK');
+                    const oficial = await resOficial.json();
+                    const blue = await resBlue.json();
+                    dolarOficialValue.textContent = formatearARS(oficial.venta);
+                    dolarBlueValue.textContent = formatearARS(blue.venta);
+                    actualizarHoraInfo();
+                } catch (err) {
+                    dolarOficialValue.textContent = 'No disponible';
+                    dolarBlueValue.textContent = 'No disponible';
+                    console.log('No se pudo obtener la cotización del dólar:', err);
+                }
+            }
+
+            cargarClima();
+            cargarDolar();
+            // Se actualiza solo cada 15 minutos mientras la página está abierta
+            setInterval(cargarClima, 900000);
+            setInterval(cargarDolar, 900000);
+
             // ---------- MENÚ HAMBURGUESA ----------
             hamburger.addEventListener('click', function() {
                 navMenu.classList.toggle('active');
@@ -2464,6 +2656,9 @@
             });
 
             // ---------- SCROLL: SOMBRA Y BOTÓN ----------
+            const floatingWeather = document.getElementById('floatingWeather');
+            const floatingDolar = document.getElementById('floatingDolar');
+
             window.addEventListener('scroll', function() {
                 if (window.scrollY > 50) {
                     header.classList.add('scrolled');
@@ -2475,6 +2670,14 @@
                     btnVolver.classList.add('visible');
                 } else {
                     btnVolver.classList.remove('visible');
+                }
+
+                if (window.scrollY > 380) {
+                    floatingWeather.classList.add('hidden');
+                    floatingDolar.classList.add('hidden');
+                } else {
+                    floatingWeather.classList.remove('hidden');
+                    floatingDolar.classList.remove('hidden');
                 }
             });
 
