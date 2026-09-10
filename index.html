@@ -276,6 +276,68 @@
 
         @media (max-width: 991px) {
             .floating-info {
+                position: fixed;
+                top: 0;
+                z-index: 1001;
+                flex-direction: row;
+                gap: 4px;
+                width: auto;
+            }
+
+            .floating-info-left {
+                left: 0;
+                align-items: stretch;
+            }
+
+            .floating-info-right {
+                right: 0;
+                flex-direction: row;
+                align-items: stretch;
+            }
+
+            .info-box {
+                background: var(--primary);
+                border: none;
+                border-bottom: 1px solid rgba(201, 168, 76, 0.4);
+                border-radius: 0;
+                box-shadow: none;
+                padding: 5px 9px;
+                gap: 5px;
+            }
+
+            .info-box:hover {
+                transform: none;
+            }
+
+            .floating-info-left .info-box {
+                border-right: 1px solid rgba(201, 168, 76, 0.25);
+            }
+
+            .floating-info-right .info-box:first-child {
+                border-right: 1px solid rgba(201, 168, 76, 0.25);
+            }
+
+            .info-box i {
+                font-size: 0.72rem;
+                width: auto;
+            }
+
+            .info-box-text {
+                flex-direction: row;
+                align-items: baseline;
+                gap: 4px;
+                line-height: 1.1;
+            }
+
+            .info-label {
+                font-size: 0.58rem;
+            }
+
+            .info-value {
+                font-size: 0.66rem;
+            }
+
+            .info-updated {
                 display: none;
             }
         }
@@ -1860,6 +1922,18 @@
                 font-size: 1.2rem;
             }
         }
+
+        /* Empuja el header y el hero hacia abajo para dejar lugar
+           a la franja de clima/dólar en pantallas chicas y medianas */
+        @media (max-width: 991px) {
+            header {
+                top: 32px;
+            }
+
+            .hero {
+                padding-top: 152px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -2672,9 +2746,14 @@
                     btnVolver.classList.remove('visible');
                 }
 
-                if (window.scrollY > 380) {
-                    floatingWeather.classList.add('hidden');
-                    floatingDolar.classList.add('hidden');
+                if (window.innerWidth > 991) {
+                    if (window.scrollY > 380) {
+                        floatingWeather.classList.add('hidden');
+                        floatingDolar.classList.add('hidden');
+                    } else {
+                        floatingWeather.classList.remove('hidden');
+                        floatingDolar.classList.remove('hidden');
+                    }
                 } else {
                     floatingWeather.classList.remove('hidden');
                     floatingDolar.classList.remove('hidden');
