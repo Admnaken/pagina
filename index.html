@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es-AR">
+<html lang="es-AR" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,7 @@
 <meta name="robots" content="index, follow">
 <meta name="author" content="Administración NAKEN">
 <link rel="canonical" href="https://administracionnaken.com.ar/">
+<meta name="theme-color" content="#0f1e2e">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -25,30 +26,43 @@
 <meta name="twitter:image" content="https://administracionnaken.com.ar/assets/images/hero-administracion-consorcios-caba.webp">
 
 <link rel="icon" href="/favicon.ico">
-<link rel="preload" as="image" href="/assets/images/hero-administracion-consorcios-caba.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="/css/styles.css">
-
-<!-- JSON-LD: Organization -->
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Spectral:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css?v=2026-10-19">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": [
+    "Organization",
+    "ProfessionalService"
+  ],
+  "@id": "https://administracionnaken.com.ar/#organizacion",
   "name": "Administración NAKEN",
   "url": "https://administracionnaken.com.ar/",
+  "logo": "https://administracionnaken.com.ar/assets/images/naken-logo.png",
+  "image": "https://administracionnaken.com.ar/assets/images/hero-administracion-consorcios-caba.webp",
   "description": "Administración profesional de consorcios y edificios en la Ciudad Autónoma de Buenos Aires (CABA).",
+  "telephone": "+5491164410369",
+  "email": "gerencia@administracionnaken.com.ar",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Monroe 3139",
+    "addressLocality": "Colegiales, Ciudad Autónoma de Buenos Aires",
+    "addressCountry": "AR"
+  },
   "areaServed": {
     "@type": "AdministrativeArea",
     "name": "Ciudad Autónoma de Buenos Aires"
   },
-  "identifier": "RPA 20066"
+  "identifier": "RPA 20066",
+  "founder": {
+    "@type": "Person",
+    "name": "Sebastián R. Espeche",
+    "jobTitle": "Administrador de Consorcios — RPA CABA N.º 20.066"
+  }
 }
 </script>
-
-<!-- JSON-LD: WebSite -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -57,16 +71,13 @@
   "url": "https://administracionnaken.com.ar/"
 }
 </script>
-
-<!-- JSON-LD: Service -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Service",
   "serviceType": "Administración de consorcios",
   "provider": {
-    "@type": "Organization",
-    "name": "Administración NAKEN"
+    "@id": "https://administracionnaken.com.ar/#organizacion"
   },
   "areaServed": {
     "@type": "AdministrativeArea",
@@ -77,27 +88,24 @@
 </script>
 </head>
 <body>
+<a class="skip-link" href="#main">Saltar al contenido</a>
 
-<a class="skip-link" href="#main" style="position:absolute;left:-999px;top:0;background:#0f1e2e;color:#fff;padding:10px 18px;z-index:2000;">Saltar al contenido</a>
-
-<!-- ============ HEADER ============ -->
-<header>
-    <div class="container nav-container">
-        <a href="/" class="logo-wrapper">
-            <img src="/assets/images/naken-logo.png" alt="Administración NAKEN" width="46" height="46">
-            <span class="logo-text">Administración NAKEN<span>Administración de Consorcios en CABA</span></span>
+<header class="site-header">
+    <div class="wrap nav-bar">
+        <a href="/" class="brand">
+            <img src="/assets/images/naken-logo.png" alt="Administración NAKEN" width="44" height="44">
+            <span class="brand-name">Administración NAKEN<small>Administración de Consorcios en CABA</small></span>
         </a>
-
         <nav class="main-nav" id="mainNav" aria-label="Menú principal">
             <a href="/" aria-current="page">Inicio</a>
             <a href="/pages/servicios.html">Servicios</a>
+            <a href="/pages/metodo.html">Método</a>
             <a href="/pages/nosotros.html">Nosotros</a>
             <a href="/pages/cambiar-administrador.html">Cambiar de administrador</a>
             <a href="/pages/preguntas-frecuentes.html">Preguntas frecuentes</a>
             <a href="/pages/contacto.html">Contacto</a>
-            <a href="/pages/contacto.html" class="btn btn-gold">Solicitar propuesta</a>
+            <a href="/pages/contacto.html" class="btn">Solicitar propuesta</a>
         </nav>
-
         <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
             <span></span><span></span><span></span>
         </button>
@@ -106,334 +114,335 @@
 
 <main id="main">
 
-<!-- ============ HERO ============ -->
-<section class="hero">
-    <img class="hero-bg" src="/assets/images/hero-administracion-consorcios-caba.webp"
-         alt="Edificio residencial moderno en la Ciudad de Buenos Aires" width="1920" height="1081" fetchpriority="high">
-    <div class="hero-bg-overlay"></div>
-    <div class="container">
-        <div class="hero-content">
+<section class="hero on-dark">
+    <div class="wrap hero-grid">
+        <div>
             <span class="hero-rpa">Administrador registrado en el Registro Público de Administradores — RPA 20066</span>
             <h1>Administración de Consorcios en CABA</h1>
-            <p class="hero-subtitle">Gestión profesional, transparente y cercana para edificios y consorcios de la Ciudad de Buenos Aires.</p>
-            <div class="hero-ctas">
+            <p class="hero-sub">Gestión profesional, transparente y cercana para edificios y consorcios de la Ciudad de Buenos Aires. Con un método donde nada queda librado a la memoria.</p>
+            <div class="actions">
                 <a href="/pages/contacto.html" class="btn btn-gold">Solicitar propuesta</a>
-                <a href="/pages/servicios.html" class="btn btn-outline-light">Conocer nuestros servicios</a>
+                <a href="/pages/servicios.html" class="btn btn-line">Conocer nuestros servicios</a>
             </div>
+            <p class="hero-sign"><strong>Lic. Sebastián R. Espeche</strong>, Capitán de Corbeta (RE), ex jefe de la Base Antártica Melchior.</p>
         </div>
+        <figure class="log" aria-label="Una noche cualquiera en un edificio">
+            <div class="log-head"><span>Bitácora del edificio</span><span>Palier, 4.º piso</span></div>
+            <div class="log-entry">
+                <span class="log-time">03:14</span>
+                <div class="log-body">
+                    <p>Huele a gas. Un vecino llama, otro manda un audio al grupo. En ese momento nadie pregunta cuánto cobra el administrador:</p>
+                    <ul>
+                        <li>¿Quién es el gasista matriculado del edificio?</li>
+                        <li>¿Dónde está la llave de corte y quién tiene la del cuarto de medidores?</li>
+                        <li>¿Está vigente el seguro? ¿Cubre este evento?</li>
+                        <li>La última empresa que arregló cañerías, ¿tenía a su personal asegurado?</li>
+                    </ul>
+                </div>
+            </div>
+            <figcaption class="log-foot">Esas respuestas no se improvisan a las 3:14. Se preparan durante meses.</figcaption>
+        </figure>
     </div>
 </section>
 
-<!-- ============ PROPUESTA DE VALOR ============ -->
 <section class="section" aria-labelledby="propuesta-titulo">
-    <div class="container">
-        <div class="section-intro">
-            <span class="eyebrow">Cómo trabajamos</span>
+    <div class="wrap">
+        <div class="section-head">
             <h2 id="propuesta-titulo">Una administración pensada para el día a día del consorcio</h2>
-            <p>Administrar un edificio implica mucho más que liquidar expensas. Es coordinar, anticipar y comunicar con orden.</p>
+            <p>Un consorcio es una pequeña empresa que nadie eligió dirigir. La liquidación que llega cada mes es la parte visible de una estructura mucho más grande.</p>
         </div>
-        <div class="value-grid">
-            <div class="value-item">
-                <h3>Seguimiento de mantenimiento</h3>
-                <p>Control continuo del estado del edificio y sus instalaciones.</p>
-            </div>
-            <div class="value-item">
-                <h3>Administración financiera</h3>
-                <p>Manejo ordenado de fondos, pagos y rendiciones.</p>
-            </div>
-            <div class="value-item">
-                <h3>Atención de propietarios</h3>
-                <p>Canales claros para consultas y reclamos.</p>
-            </div>
-            <div class="value-item">
-                <h3>Coordinación de proveedores</h3>
-                <p>Gestión de contrataciones y seguimiento de trabajos.</p>
-            </div>
-            <div class="value-item">
-                <h3>Resolución de problemas</h3>
-                <p>Respuesta ordenada ante imprevistos del consorcio.</p>
-            </div>
-            <div class="value-item">
-                <h3>Cumplimiento de obligaciones</h3>
-                <p>Seguimiento de las obligaciones legales y administrativas del consorcio.</p>
-            </div>
+        <table class="ledger">
+            <thead><tr><th scope="col">Lo que llega a su casa</th><th scope="col">Lo que sostiene esa hoja</th></tr></thead>
+            <tbody>
+                <tr><td>La liquidación mensual de expensas</td><td>Rendición de cuentas conforme a la Ley 941 de CABA, con respaldo documental de cada peso gastado.</td></tr>
+                <tr><td>“El encargado limpia y atiende”</td><td>Liquidación de sueldos bajo convenio, F.931, cargas sociales, aportes sindicales, ART, libro de sueldos y legajos al día.</td></tr>
+                <tr><td>“Vino el técnico del ascensor”</td><td>Contrato con un conservador habilitado, libro de inspección y controles periódicos obligatorios.</td></tr>
+                <tr><td>“Arreglaron una filtración”</td><td>Presupuestos comparables, validación fiscal del proveedor, seguro de su personal, factura válida y retenciones cuando corresponden.</td></tr>
+                <tr><td>“Se pagaron los servicios”</td><td>La posición del consorcio como contribuyente ante ARCA y AGIP, y como agente de retención cuando el régimen lo exige.</td></tr>
+                <tr><td>“Hubo asamblea”</td><td>Convocatoria en término, orden del día, quórum y mayorías del Reglamento y del Código Civil y Comercial, acta en libro rubricado.</td></tr>
+                <tr><td>“Todo funciona”</td><td>Matafuegos, tanques de agua, control de plagas, instalaciones eléctricas y de gas, fachada: cada uno con su propio vencimiento.</td></tr>
+            </tbody>
+        </table>
+        <p class="callout">Un administrador trabaja al mismo tiempo como contador, empleador, gestor de compras, técnico, mediador y archivista.<span>A la vez. Todos los días. Por un solo honorario.</span></p>
+    </div>
+</section>
+
+<section class="section tint" aria-labelledby="metodo-titulo">
+    <div class="wrap">
+        <div class="section-head">
+            <h2 id="metodo-titulo">Asumo la guardia</h2>
+            <p>En la Armada, quien asume una guardia recibe todo lo que ocurre en ella. Por eso nadie firma sin verificar antes, con sus propios ojos, qué está recibiendo. Así asumo un consorcio: no importa quién estuvo antes, todo se verifica, se inventaría y se firma. Y desde ese día, respondo yo.</p>
+        </div>
+        <div class="practices">
+            <div class="practice"><h3>La verificación</h3><p>Nada se recibe de palabra. Libros, fondos, contratos e instalaciones se revisan uno por uno antes de firmar. Lo que falta se reclama por escrito.</p></div>
+            <div class="practice"><h3>La lista de verificación</h3><p>Ningún procedimiento crítico se hace de memoria, por experimentado que sea quien lo ejecuta. Cada toma de posesión, cada contratación y cada pago sigue su lista.</p></div>
+            <div class="practice"><h3>La bitácora</h3><p>Todo lo que ocurre queda asentado con fecha y responsable. Si algo pasó, se puede reconstruir. Si no está escrito, no ocurrió.</p></div>
         </div>
     </div>
 </section>
 
-<!-- ============ SERVICIOS ============ -->
-<section class="section section-alt" aria-labelledby="servicios-titulo">
-    <div class="container">
-        <div class="section-intro">
-            <span class="eyebrow">Qué hacemos</span>
+<section class="section dark on-dark" aria-labelledby="tecnologia-titulo">
+    <div class="wrap">
+        <div class="section-head">
+            <h2 id="tecnologia-titulo">Herramientas propias para cada momento en que un consorcio pierde dinero</h2>
+            <p>No es un software genérico. Las escribí yo, porque conozco los puntos exactos donde un consorcio pierde plata sin darse cuenta. Y no tienen costo extra para el consorcio, a diferencia de las plataformas con abono mensual.</p>
+        </div>
+        <ol class="moments">
+            <li class="moment">
+                <div class="moment-id"><h3>El día que se recibe el edificio</h3><div class="tool">Balance Cero</div></div>
+                <div class="risk"><h4>El riesgo</h4><p>Cambiar de administrador es el momento más vulnerable de un consorcio. Libros que no aparecen, deudas con proveedores que nadie informó, juicios en trámite, sueldos mal liquidados, claves bancarias en manos de quien se fue. Lo que no se reclama en las primeras semanas, suele perderse.</p></div>
+                <div class="does"><h4>Lo que hago</h4><p>Una secuencia de pasos verificables, desde la notificación al administrador saliente hasta la auditoría técnica del edificio, el inventario de libros y documentación, y un Acta de Recepción firmada con reserva de auditoría. Si algo no se entrega, la aplicación marca cuándo corresponde intimar.</p></div>
+            </li>
+            <li class="moment">
+                <div class="moment-id"><h3>El operario que se cae de la escalera</h3><div class="tool">Contrataciones</div></div>
+                <div class="risk"><h4>El riesgo</h4><p>Si el trabajador de una empresa contratada sufre un accidente en el edificio y esa empresa no tenía a su personal asegurado, el reclamo puede alcanzar al consorcio. Es una de las contingencias más caras y menos conocidas de la propiedad horizontal.</p></div>
+                <div class="does"><h4>Lo que hago</h4><p>Ningún proveedor entra al edificio sin presupuestos comparables, validación fiscal, contrato con cláusulas mínimas y control de ART o seguro con cláusula de no repetición. Dos vistos buenos: uno para contratar y otro para pagar. Si falta un papel, la contratación no avanza.</p></div>
+            </li>
+            <li class="moment">
+                <div class="moment-id"><h3>El pago al proveedor</h3><div class="tool">Planilla de Retenciones</div></div>
+                <div class="risk"><h4>El riesgo</h4><p>Cuando corresponde retener impuestos a un proveedor y no se hace, la deuda deja de ser del proveedor y pasa a ser del consorcio, con intereses y multas. Es un error silencioso que suele aparecer años después, con otro administrador y otros propietarios.</p></div>
+                <div class="does"><h4>Lo que hago</h4><p>Cada pago pasa por una planilla propia que determina, proveedor por proveedor y según los regímenes vigentes, si corresponde retener, cuánto y ante qué organismo. El proveedor recibe su certificado y el consorcio queda cubierto.</p></div>
+            </li>
+            <li class="moment">
+                <div class="moment-id"><h3>Todos los días</h3><div class="tool">Aplicación NAKEN</div></div>
+                <div class="risk"><h4>El riesgo</h4><p>La mayoría de los conflictos entre vecinos y administración nace de una sola cosa: no saber. No saber en qué se gastó, qué se pagó, qué falta y por qué.</p></div>
+                <div class="does"><h4>Lo que hago</h4><p>Cada propietario ve desde el celular, a cualquier hora, su estado de cuenta, la liquidación con el detalle de cada gasto, los comprobantes, los comunicados y la liquidación de sueldos del personal. Sin depender de un llamado ni del horario de oficina.</p></div>
+            </li>
+        </ol>
+        <div class="actions" style="margin-top:36px;">
+            <a href="/pages/metodo.html" class="btn btn-gold">Ver cómo funciona cada herramienta</a>
+            <a href="/pages/contacto.html?motivo=demostracion" class="btn btn-line">Pedir una demostración</a>
+        </div>
+    </div>
+</section>
+
+<section class="section" aria-labelledby="servicios-titulo">
+    <div class="wrap">
+        <div class="section-head">
             <h2 id="servicios-titulo">Servicios de Administración de Consorcios</h2>
+            <p>Todo lo que exige la Ley 941 y el Código Civil y Comercial, con el alcance del honorario escrito antes de decidir.</p>
         </div>
-        <div class="services-grid">
-            <article class="service-card">
-                <div class="icon"><i class="fas fa-file-invoice-dollar" aria-hidden="true"></i></div>
-                <h3>Liquidación y administración de expensas</h3>
-                <p>Cálculo, emisión y seguimiento del pago de expensas de forma ordenada.</p>
-            </article>
-            <article class="service-card">
-                <div class="icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
-                <h3>Gestión financiera</h3>
-                <p>Administración de fondos del consorcio y control de gastos.</p>
-            </article>
-            <article class="service-card">
-                <div class="icon"><i class="fas fa-tools" aria-hidden="true"></i></div>
-                <h3>Mantenimiento edilicio</h3>
-                <p>Seguimiento del estado general del edificio y sus instalaciones.</p>
-            </article>
-            <article class="service-card">
-                <div class="icon"><i class="fas fa-handshake" aria-hidden="true"></i></div>
-                <h3>Gestión de proveedores</h3>
-                <p>Coordinación de contrataciones y seguimiento de tareas.</p>
-            </article>
-            <article class="service-card">
-                <div class="icon"><i class="fas fa-users" aria-hidden="true"></i></div>
-                <h3>Atención a propietarios</h3>
-                <p>Comunicación directa y ordenada con cada propietario.</p>
-            </article>
-            <article class="service-card">
-                <div class="icon"><i class="fas fa-balance-scale" aria-hidden="true"></i></div>
-                <h3>Gestión de conflictos</h3>
-                <p>Abordaje ordenado de diferencias dentro del consorcio.</p>
-            </article>
-            <article class="service-card">
-                <div class="icon"><i class="fas fa-wrench" aria-hidden="true"></i></div>
-                <h3>Seguimiento de reparaciones</h3>
-                <p>Control de reparaciones desde el pedido hasta su finalización.</p>
-            </article>
-            <article class="service-card">
-                <div class="icon"><i class="fas fa-folder-open" aria-hidden="true"></i></div>
-                <h3>Gestión administrativa del consorcio</h3>
-                <p>Documentación, actas y trámites al día.</p>
-            </article>
-        </div>
+        <ul class="service-list">
+            <li><h3>Liquidación y administración de expensas</h3><p>Modelo único de la Ciudad, con el comprobante de cada gasto a la vista.</p></li>
+            <li><h3>Gestión financiera</h3><p>Fondos en cuentas del consorcio, pagos solo bancarios y conciliación mensual publicada.</p></li>
+            <li><h3>Mantenimiento edilicio</h3><p>Vencimientos de matafuegos, tanques, ascensores, gas, electricidad y fachada bajo control.</p></li>
+            <li><h3>Gestión de proveedores</h3><p>Presupuestos comparables, legajo completo y dos vistos buenos antes de pagar.</p></li>
+            <li><h3>Atención a propietarios</h3><p>Consultas y reclamos por escrito, con registro de fecha y respuesta.</p></li>
+            <li><h3>Gestión de conflictos</h3><p>Formación en análisis y negociación de conflictos, con constancia escrita de cada caso.</p></li>
+            <li><h3>Seguimiento de reparaciones</h3><p>Historial de cada trabajo y aviso cuando una falla repetida está en garantía.</p></li>
+            <li><h3>Gestión administrativa del consorcio</h3><p>Libros rubricados, actas, seguros y trámites ante ARCA, AGIP y la AGC.</p></li>
+        </ul>
+        <p style="margin-top:28px;"><a href="/pages/servicios.html">Qué incluye el honorario y qué se cobra aparte</a></p>
     </div>
 </section>
 
-<!-- ============ CAMBIAR DE ADMINISTRADOR ============ -->
+<section class="section tint" aria-labelledby="compromisos-titulo">
+    <div class="wrap">
+        <div class="section-head">
+            <h2 id="compromisos-titulo">Compromisos que se pueden medir</h2>
+            <p>Responsable, eficiente, transparente: esas palabras están en todas las propuestas. Prefiero comprometer cosas que ustedes puedan controlar con un reloj y un calendario.</p>
+        </div>
+        <table class="terms">
+            <thead><tr><th scope="col">Compromiso</th><th scope="col">Plazo</th></tr></thead>
+            <tbody>
+                <tr><td>Emergencias de gas, agua, electricidad o seguridad</td><td class="value">Mismo día, 24 horas</td></tr>
+                <tr><td>Comprobante de cada gasto visible en la aplicación</td><td class="value">El 100 % de lo liquidado</td></tr>
+                <tr><td>Conciliación bancaria del mes publicada, con cada diferencia explicada</td><td class="value">Antes del día 10</td></tr>
+                <tr><td>Certificado de deudas y créditos</td><td class="value">3 días hábiles</td></tr>
+                <tr><td>Aviso a los propietarios de un reclamo administrativo o judicial</td><td class="value">48 horas</td></tr>
+                <tr><td>Contratación de un proveedor sin legajo completo</td><td class="value">Nunca</td></tr>
+            </tbody>
+        </table>
+        <p class="muted" style="margin-top:20px;">¿Y si no cumplo? Lo van a saber antes que nadie, porque cada fecha y cada respuesta quedan registradas en la aplicación.</p>
+    </div>
+</section>
+
 <section class="section" aria-labelledby="cambiar-titulo">
-    <div class="container">
-        <div class="change-admin">
-            <div class="change-admin-text">
-                <h2 id="cambiar-titulo">¿Están evaluando cambiar de administrador?</h2>
-                <p>El cambio de administrador requiere organización, información y una transición ordenada. En Administración NAKEN podemos analizar la situación actual del consorcio y presentar una propuesta de gestión.</p>
-            </div>
-            <a href="/pages/cambiar-administrador.html" class="btn btn-gold">Solicitar una propuesta</a>
+    <div class="wrap">
+        <div class="section-head">
+            <h2 id="cambiar-titulo">¿Están evaluando cambiar de administrador?</h2>
+            <p>El cambio requiere organización, información y una transición ordenada. Este es el orden exacto en que recibo, reviso y ordeno un edificio.</p>
+        </div>
+        <ol class="timeline">
+        <li><span class="when">Días 1 a 10</span><div><h3>Toma de posesión</h3><p>Notificación al administrador saliente, recepción de libros, documentación, fondos y claves. Relevamiento técnico del edificio y firma del Acta de Recepción con reserva de auditoría. Intimación formal por lo que no se entregue.</p></div></li>
+        <li><span class="when">Mes 1</span><div><h3>Auditoría de libros</h3><p>Actas, administración, sueldos, inspecciones: verifico que la documentación legal esté completa, rubricada y sin irregularidades.</p></div></li>
+        <li><span class="when">Día 30</span><div><h3>Asamblea informativa de inicio</h3><p>Presento en persona lo que recibí y lo que encontré, con el Acta a la vista de todos.</p></div></li>
+        <li><span class="when">Mes 2</span><div><h3>Proveedores y contratos</h3><p>Vigencia, idoneidad y cobertura de cada proveedor. Renegociación donde haya margen, sin resignar calidad técnica.</p></div></li>
+        <li><span class="when">Mes 3</span><div><h3>Auditoría financiera y fiscal</h3><p>Estado de cuentas, morosidad y obligaciones ante ARCA y AGIP, para que el consorcio no arrastre pasivos ocultos.</p></div></li>
+        <li><span class="when">Día 90</span><div><h3>Informe de situación</h3><p>Documento escrito para cada propietario: qué encontré, qué resolví, qué queda pendiente y cuánto cuesta resolverlo.</p></div></li>
+    </ol>
+        <div class="actions" style="margin-top:32px;">
+            <a href="/pages/cambiar-administrador.html" class="btn btn-navy">Cómo es el cambio de administrador</a>
         </div>
     </div>
 </section>
 
-<!-- ============ EXPERIENCIA ============ -->
-<section class="section section-alt" aria-labelledby="experiencia-titulo">
-    <div class="container">
-        <div class="section-intro">
-            <span class="eyebrow">Por qué NAKEN</span>
+<section class="section tint" aria-labelledby="experiencia-titulo">
+    <div class="wrap profile">
+        <div>
             <h2 id="experiencia-titulo">Experiencia y gestión profesional</h2>
-            <p>Más de 25 años de trayectoria en la gestión de infraestructura crítica, entornos operativos de alta exigencia y administración de viviendas fiscales.</p>
+            <p class="quote">Fui jefe de una base en la Antártida. Ahí se aprende que la improvisación es un lujo que no se puede pagar.</p>
+            <p class="muted">Energía, agua, calefacción, combustible, víveres, comunicaciones, mantenimiento y personal, todo bajo una sola firma y sin posibilidad de llamar a nadie. Un edificio es lo mismo en otra escala: instalaciones que no pueden fallar, personas que dependen de ellas y alguien que responde por todo.</p>
+            <p><a href="/pages/nosotros.html">Trayectoria y formación completas</a></p>
         </div>
-        <div class="experience-list">
-            <div class="experience-item">
-                <i class="fas fa-check" aria-hidden="true"></i>
-                <p>Administrador registrado — RPA 20066</p>
+        <ul class="facts">
+            <li><b>Matrícula</b><span>Registro Público de Administradores de CABA, RPA N.º 20.066</span></li>
+            <li><b>Administración</b><span>Experto Universitario en Administración de Consorcios (UTN) y liquidación de sueldos</span></li>
+            <li><b>Técnica del edificio</b><span>Gasista de 3.ª y 2.ª categoría, plomero instalador y perito auxiliar en electricidad</span></li>
+            <li><b>Conflictos</b><span>Licenciado en Relaciones Internacionales, con formación en negociación y conflictos</span></li>
+            <li><b>Trayectoria</b><span>Más de 25 años en infraestructura crítica y en la gestión de viviendas fiscales en 11 edificios y 3 barrios del AMBA</span></li>
+            <li><b>Además</b><span>Como propietario, también pago expensas todos los meses</span></li>
+        </ul>
+    </div>
+</section>
+
+<section class="section" aria-labelledby="prueba-titulo">
+    <div class="wrap">
+        <div class="section-head">
+            <h2 id="prueba-titulo">No me elijan por lo que dice esta página. Pónganla a prueba.</h2>
+            <p>Tres formas de comprobarlo antes de decidir. Las tres son sin cargo y sin compromiso de contratación.</p>
+        </div>
+        <div class="offers">
+            <div class="offer">
+                <h3>Envíenme su última liquidación de expensas</h3>
+                <p>En 72 horas les devuelvo un diagnóstico escrito de una página con lo que observo: gastos sin respaldo, retenciones, vencimientos y riesgos. Es de ustedes, me elijan o no.</p>
+                <a href="/pages/contacto.html?motivo=diagnostico">Pedir el diagnóstico</a>
             </div>
-            <div class="experience-item">
-                <i class="fas fa-check" aria-hidden="true"></i>
-                <p>Experiencia en gestión de infraestructura crítica</p>
+            <div class="offer">
+                <h3>Vean las herramientas funcionando</h3>
+                <p>En 30 minutos, presencial o por videollamada, les muestro Balance Cero, Contrataciones, la planilla de retenciones y la aplicación con datos de ejemplo. Sin diapositivas.</p>
+                <a href="/pages/contacto.html?motivo=demostracion">Coordinar la demostración</a>
             </div>
-            <div class="experience-item">
-                <i class="fas fa-check" aria-hidden="true"></i>
-                <p>Manejo de entornos operativos de alta exigencia</p>
-            </div>
-            <div class="experience-item">
-                <i class="fas fa-check" aria-hidden="true"></i>
-                <p>Herramientas digitales para propietarios</p>
+            <div class="offer">
+                <h3>Recorramos el edificio juntos</h3>
+                <p>Una visita de 45 minutos con quien ustedes designen, con ojos de gasista, plomero y electricista: lo que está bien, lo que está por vencer y lo que conviene atender primero.</p>
+                <a href="/pages/contacto.html?motivo=recorrida">Coordinar la recorrida</a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ============ TECNOLOGÍA / ATENCIÓN DIGITAL ============ -->
-<section class="section" aria-labelledby="tecnologia-titulo">
-    <div class="container">
-        <div class="section-intro">
-            <span class="eyebrow">Herramientas digitales</span>
-            <h2 id="tecnologia-titulo">Atención digital para propietarios</h2>
-            <p>El consorcio cuenta con herramientas digitales pensadas para facilitar la comunicación y dar transparencia a la gestión.</p>
-        </div>
-        <div class="experience-list">
-            <div class="experience-item">
-                <i class="fas fa-circle-info" aria-hidden="true"></i>
-                <p>Consultar información del consorcio</p>
-            </div>
-            <div class="experience-item">
-                <i class="fas fa-circle-info" aria-hidden="true"></i>
-                <p>Realizar reclamos</p>
-            </div>
-            <div class="experience-item">
-                <i class="fas fa-circle-info" aria-hidden="true"></i>
-                <p>Acceder a documentación</p>
-            </div>
-            <div class="experience-item">
-                <i class="fas fa-circle-info" aria-hidden="true"></i>
-                <p>Comunicación directa con la administración</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ============ PROCESO DE INCORPORACIÓN ============ -->
-<section class="section section-alt" aria-labelledby="proceso-titulo">
-    <div class="container">
-        <div class="section-intro">
-            <span class="eyebrow">Primeros pasos</span>
-            <h2 id="proceso-titulo">¿Cómo comenzar?</h2>
-        </div>
-        <div class="steps">
-            <div class="step">
-                <h3>Contanos sobre tu consorcio</h3>
-                <p>Nos compartís la información básica del edificio.</p>
-            </div>
-            <div class="step">
-                <h3>Analizamos la situación actual</h3>
-                <p>Revisamos el estado administrativo y financiero.</p>
-            </div>
-            <div class="step">
-                <h3>Preparamos una propuesta</h3>
-                <p>Presentamos un plan de gestión adaptado al consorcio.</p>
-            </div>
-            <div class="step">
-                <h3>Coordinamos la transición</h3>
-                <p>Organizamos el traspaso de forma ordenada.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ============ CABA ============ -->
-<section class="section" aria-labelledby="caba-titulo">
-    <div class="container">
-        <div class="section-intro">
-            <span class="eyebrow">Área de servicio</span>
+<section class="section tint" aria-labelledby="caba-titulo">
+    <div class="wrap">
+        <div class="section-head" style="margin-bottom:0;">
             <h2 id="caba-titulo">Administración de Consorcios en la Ciudad de Buenos Aires</h2>
             <p>Administración NAKEN brinda servicios de administración de consorcios en toda la Ciudad Autónoma de Buenos Aires, incluyendo barrios como Palermo, Belgrano, Recoleta, Caballito, Villa Urquiza, Almagro, Núñez, Villa Devoto y Colegiales, entre otros.</p>
         </div>
     </div>
 </section>
 
-<!-- ============ FAQ ============ -->
-<section class="section section-alt" aria-labelledby="faq-titulo">
-    <div class="container">
-        <div class="section-intro">
-            <span class="eyebrow">Dudas frecuentes</span>
+<section class="section" aria-labelledby="faq-titulo">
+    <div class="wrap">
+        <div class="section-head">
             <h2 id="faq-titulo">Preguntas frecuentes</h2>
         </div>
         <div class="faq-list">
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">
-                    ¿Qué hace un administrador de consorcio?
-                    <i class="fas fa-plus icon" aria-hidden="true"></i>
-                </button>
-                <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1">
-                    <p>El administrador se ocupa de la gestión financiera, administrativa y operativa del consorcio: liquidación de expensas, seguimiento de mantenimiento, atención a propietarios y coordinación de proveedores.</p>
-                </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="inicio-a1" id="inicio-q1">
+                ¿Qué hace un administrador de consorcio?
+                <span class="sign" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="inicio-a1" role="region" aria-labelledby="inicio-q1">
+                <div><p>Sostiene en simultáneo la parte laboral, financiera, impositiva, edilicia, legal y humana del edificio: liquidación de expensas y sueldos, conciliación bancaria, retenciones, mantenimiento, seguros, morosidad, asambleas y atención a propietarios. <a href="/pages/preguntas-frecuentes.html#faq-a1">Respuesta completa</a>.</p></div>
             </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">
-                    ¿Cómo se puede cambiar de administrador?
-                    <i class="fas fa-plus icon" aria-hidden="true"></i>
-                </button>
-                <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2">
-                    <p>El cambio de administrador requiere organización, información y una transición ordenada. Podemos analizar la situación actual del consorcio y presentar una propuesta de gestión.</p>
-                </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="inicio-a2" id="inicio-q2">
+                ¿Cómo se puede cambiar de administrador?
+                <span class="sign" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="inicio-a2" role="region" aria-labelledby="inicio-q2">
+                <div><p>Revisando el Reglamento de Propiedad Horizontal, convocando a asamblea (el Consejo o un grupo de propietarios puede hacerlo), votando la remoción y la designación con las mayorías que correspondan, y notificando al saliente para que entregue documentación, fondos y claves. <a href="/pages/preguntas-frecuentes.html#faq-a2">Paso a paso y riesgos</a>.</p></div>
             </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">
-                    ¿Qué información necesita un administrador para tomar un consorcio?
-                    <i class="fas fa-plus icon" aria-hidden="true"></i>
-                </button>
-                <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3">
-                    <p>[COMPLETAR DATO: detalle de la documentación e información específica que se solicita al iniciar una administración]</p>
-                </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="inicio-a3" id="inicio-q3">
+                ¿Qué información necesita un administrador para tomar un consorcio?
+                <span class="sign" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="inicio-a3" role="region" aria-labelledby="inicio-q3">
+                <div><p>Reglamento, planos, CUIT y libros rubricados; claves fiscales, cuentas bancarias, liquidaciones, morosos y facturas pendientes; legajos del personal, ART, F.931 y aportes; pólizas y certificados técnicos (ascensores, incendio, tanques, gas, fachada, electricidad). <a href="/pages/preguntas-frecuentes.html#faq-a3">Lista completa</a>.</p></div>
             </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">
-                    ¿Cómo se gestionan las expensas?
-                    <i class="fas fa-plus icon" aria-hidden="true"></i>
-                </button>
-                <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4">
-                    <p>Las expensas se liquidan y administran de forma ordenada, con seguimiento del pago por parte de cada propietario.</p>
-                </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="inicio-a4" id="inicio-q4">
+                ¿Cómo se gestionan las expensas?
+                <span class="sign" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="inicio-a4" role="region" aria-labelledby="inicio-q4">
+                <div><p>Cada gasto se carga con su comprobante y se prorratea por coeficiente. Cada propietario descarga su liquidación con el modelo único de la Ciudad y accede por código QR a la documentación respaldatoria.</p></div>
             </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">
-                    ¿Cómo se gestionan los proveedores y reparaciones?
-                    <i class="fas fa-plus icon" aria-hidden="true"></i>
-                </button>
-                <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5">
-                    <p>Se coordina la contratación de proveedores y se hace seguimiento de las reparaciones desde el pedido hasta su finalización.</p>
-                </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="inicio-a5" id="inicio-q5">
+                ¿Cómo se gestionan los proveedores y reparaciones?
+                <span class="sign" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="inicio-a5" role="region" aria-labelledby="inicio-q5">
+                <div><p>Con presupuestos comparables, validación fiscal, control del seguro del personal y dos vistos buenos. Cada factura queda archivada con su comprobante y el sistema impide pagar dos veces lo mismo o contratar de nuevo un trabajo que está en garantía.</p></div>
             </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">
-                    ¿Cómo se comunica la administración con los propietarios?
-                    <i class="fas fa-plus icon" aria-hidden="true"></i>
-                </button>
-                <div class="faq-answer" id="faq-a6" role="region" aria-labelledby="faq-q6">
-                    <p>A través de herramientas digitales para consultar información, realizar reclamos y acceder a documentación, además de contacto directo.</p>
-                </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="inicio-a6" id="inicio-q6">
+                ¿Cómo se comunica la administración con los propietarios?
+                <span class="sign" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="inicio-a6" role="region" aria-labelledby="inicio-q6">
+                <div><p>Cada propietario tiene su cuenta en la aplicación: estado de cuenta, liquidaciones, comprobantes, comunicados, reclamos y consultas por escrito, con registro de fecha y respuesta.</p></div>
             </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-a7" id="faq-q7">
-                    ¿Administración NAKEN trabaja en toda CABA?
-                    <i class="fas fa-plus icon" aria-hidden="true"></i>
-                </button>
-                <div class="faq-answer" id="faq-a7" role="region" aria-labelledby="faq-q7">
-                    <p>Sí, brindamos servicios de administración de consorcios en toda la Ciudad Autónoma de Buenos Aires.</p>
-                </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="inicio-a7" id="inicio-q7">
+                ¿Administración NAKEN trabaja en toda CABA?
+                <span class="sign" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="inicio-a7" role="region" aria-labelledby="inicio-q7">
+                <div><p>Sí, brindamos servicios de administración de consorcios en toda la Ciudad Autónoma de Buenos Aires.</p></div>
             </div>
         </div>
     </div>
-</section>
-
-<!-- ============ CTA FINAL ============ -->
-<section class="cta-final" aria-labelledby="cta-final-titulo">
-    <div class="container">
-        <h2 id="cta-final-titulo">¿Están buscando una nueva administración para su consorcio?</h2>
-        <p>Conversemos sobre las necesidades de tu edificio y evaluemos una propuesta de administración.</p>
-        <div class="cta-final-buttons">
-            <a href="/pages/contacto.html" class="btn btn-gold">Solicitar propuesta</a>
-            <a href="https://wa.me/541164410369" class="btn btn-whatsapp" target="_blank" rel="noopener">
-                <i class="fab fa-whatsapp" aria-hidden="true"></i> Contactar por WhatsApp
-            </a>
-        </div>
+        <p style="margin-top:24px;"><a href="/pages/preguntas-frecuentes.html">Ver todas las respuestas completas</a></p>
     </div>
 </section>
 
 </main>
 
-<!-- ============ FOOTER ============ -->
-<footer>
-    <div class="container">
+<section class="cta-final on-dark" aria-labelledby="cta-final-titulo">
+    <div class="wrap">
+        <h2 id="cta-final-titulo">¿Están buscando una nueva administración para su consorcio?</h2>
+        <p>Conversemos sobre las necesidades de su edificio y evaluemos una propuesta de administración. El día que decidan, asumo la guardia.</p>
+        <div class="actions">
+            <a href="/pages/contacto.html" class="btn btn-gold">Solicitar propuesta</a>
+            <a href="https://wa.me/5491164410369" class="btn btn-wa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3C4.1 15 3.7 13.5 3.7 12c0-4.6 3.7-8.3 8.3-8.3s8.3 3.7 8.3 8.3-3.7 8.2-8.3 8.2z"/></svg> Contactar por WhatsApp</a>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="wrap">
         <div class="footer-grid">
             <div>
                 <div class="footer-brand">Administración NAKEN</div>
-                <p style="font-size:0.9rem;">Administración de Consorcios en CABA<br>RPA 20066</p>
+                <p>Administración de Consorcios en CABA<br>Lic. Sebastián R. Espeche · RPA 20066</p>
             </div>
             <div>
                 <h4>Navegación</h4>
                 <ul>
                     <li><a href="/">Inicio</a></li>
                     <li><a href="/pages/servicios.html">Servicios</a></li>
+                    <li><a href="/pages/metodo.html">Método y herramientas</a></li>
                     <li><a href="/pages/nosotros.html">Nosotros</a></li>
+                    <li><a href="/pages/cambiar-administrador.html">Cambiar de administrador</a></li>
                     <li><a href="/pages/preguntas-frecuentes.html">Preguntas frecuentes</a></li>
                     <li><a href="/pages/contacto.html">Contacto</a></li>
                 </ul>
             </div>
             <div>
-                <h4>Legal</h4>
+                <h4>Propietarios</h4>
+                <ul>
+                    <li><a href="https://app.administracionnaken.com.ar/">Ingresar a la aplicación</a></li>
+                </ul>
+                <h4 style="margin-top:22px;">Legal</h4>
                 <ul>
                     <li><a href="/pages/legal.html#privacidad">Política de privacidad</a></li>
                     <li><a href="/pages/legal.html#aviso-legal">Aviso legal</a></li>
@@ -442,22 +451,20 @@
             <div>
                 <h4>Contacto</h4>
                 <ul>
-                    <li><a href="tel:+541164410369">+54 11 6441-0369</a></li>
+                    <li><a href="tel:+5491164410369">11 6441-0369</a></li>
                     <li><a href="mailto:gerencia@administracionnaken.com.ar">gerencia@administracionnaken.com.ar</a></li>
+                    <li>Av. Monroe 3139, Colegiales, CABA</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <span>&copy; <span id="year"></span> Administración NAKEN — RPA 20066</span>
+            <span>&copy; <span id="year">2026</span> Administración NAKEN — RPA 20066</span>
         </div>
     </div>
 </footer>
 
-<a href="https://wa.me/541164410369" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-    <i class="fab fa-whatsapp" aria-hidden="true"></i>
-</a>
+<a href="https://wa.me/5491164410369" class="wa-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3C4.1 15 3.7 13.5 3.7 12c0-4.6 3.7-8.3 8.3-8.3s8.3 3.7 8.3 8.3-3.7 8.2-8.3 8.2z"/></svg></a>
 
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-<script src="/js/main.js"></script>
+<script src="/js/main.js?v=2026-10-19"></script>
 </body>
 </html>

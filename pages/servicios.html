@@ -1,49 +1,89 @@
 <!DOCTYPE html>
-<html lang="es-AR">
+<html lang="es-AR" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Servicios de Administración de Consorcios en CABA | Administración NAKEN</title>
 <meta name="description" content="Liquidación de expensas, gestión financiera, mantenimiento edilicio, gestión de proveedores y más. Servicios de administración de consorcios en CABA.">
 <meta name="robots" content="index, follow">
+<meta name="author" content="Administración NAKEN">
 <link rel="canonical" href="https://administracionnaken.com.ar/pages/servicios.html">
+<meta name="theme-color" content="#0f1e2e">
+
+<!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Servicios de Administración de Consorcios en CABA | Administración NAKEN">
-<meta property="og:description" content="Liquidación de expensas, gestión financiera, mantenimiento edilicio, gestión de proveedores y más.">
+<meta property="og:locale" content="es_AR">
 <meta property="og:url" content="https://administracionnaken.com.ar/pages/servicios.html">
+<meta property="og:site_name" content="Administración NAKEN">
+<meta property="og:title" content="Servicios de Administración de Consorcios en CABA | Administración NAKEN">
+<meta property="og:description" content="Liquidación de expensas, gestión financiera, mantenimiento edilicio, gestión de proveedores y más. Servicios de administración de consorcios en CABA.">
+<meta property="og:image" content="https://administracionnaken.com.ar/assets/images/hero-administracion-consorcios-caba.webp">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Servicios de Administración de Consorcios en CABA | Administración NAKEN">
+<meta name="twitter:description" content="Liquidación de expensas, gestión financiera, mantenimiento edilicio, gestión de proveedores y más. Servicios de administración de consorcios en CABA.">
+<meta name="twitter:image" content="https://administracionnaken.com.ar/assets/images/hero-administracion-consorcios-caba.webp">
+
 <link rel="icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="/css/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Spectral:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css?v=2026-10-19">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://administracionnaken.com.ar/"},
-    {"@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://administracionnaken.com.ar/pages/servicios.html"}
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://administracionnaken.com.ar/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Servicios",
+      "item": "https://administracionnaken.com.ar/pages/servicios.html"
+    }
   ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Administración de consorcios",
+  "provider": {
+    "@id": "https://administracionnaken.com.ar/#organizacion"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Ciudad Autónoma de Buenos Aires"
+  },
+  "name": "Administración de Consorcios en CABA"
 }
 </script>
 </head>
 <body>
+<a class="skip-link" href="#main">Saltar al contenido</a>
 
-<header>
-    <div class="container nav-container">
-        <a href="/" class="logo-wrapper">
-            <img src="/assets/images/naken-logo.png" alt="Administración NAKEN" width="46" height="46">
-            <span class="logo-text">Administración NAKEN<span>Administración de Consorcios en CABA</span></span>
+<header class="site-header">
+    <div class="wrap nav-bar">
+        <a href="/" class="brand">
+            <img src="/assets/images/naken-logo.png" alt="Administración NAKEN" width="44" height="44">
+            <span class="brand-name">Administración NAKEN<small>Administración de Consorcios en CABA</small></span>
         </a>
         <nav class="main-nav" id="mainNav" aria-label="Menú principal">
             <a href="/">Inicio</a>
             <a href="/pages/servicios.html" aria-current="page">Servicios</a>
+            <a href="/pages/metodo.html">Método</a>
             <a href="/pages/nosotros.html">Nosotros</a>
             <a href="/pages/cambiar-administrador.html">Cambiar de administrador</a>
             <a href="/pages/preguntas-frecuentes.html">Preguntas frecuentes</a>
             <a href="/pages/contacto.html">Contacto</a>
-            <a href="/pages/contacto.html" class="btn btn-gold">Solicitar propuesta</a>
+            <a href="/pages/contacto.html" class="btn">Solicitar propuesta</a>
         </nav>
         <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
             <span></span><span></span><span></span>
@@ -51,94 +91,119 @@
     </div>
 </header>
 
-<main id="main">
-<div class="page-hero">
-    <div class="container">
-        <p class="breadcrumbs"><a href="/">Inicio</a> / Servicios</p>
+<section class="page-hero">
+    <div class="wrap">
+        <nav class="crumbs" aria-label="Ruta"><a href="/">Inicio</a> / Servicios</nav>
         <h1>Servicios de Administración de Consorcios</h1>
-        <p>Gestión integral pensada para el día a día del edificio.</p>
+        <p>Gestión integral pensada para el día a día del edificio, con el alcance del honorario escrito antes de decidir.</p>
     </div>
-</div>
+</section>
+
+<main id="main">
 
 <section class="section">
-    <div class="container">
-        <div class="services-grid">
-            <article class="service-card" id="expensas">
-                <div class="icon"><i class="fas fa-file-invoice-dollar" aria-hidden="true"></i></div>
-                <h3>Liquidación y administración de expensas</h3>
-                <p>Cálculo, emisión y seguimiento del pago de expensas de forma ordenada y transparente para todos los propietarios.</p>
-            </article>
-            <article class="service-card" id="financiera">
-                <div class="icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
-                <h3>Gestión financiera</h3>
-                <p>Administración de los fondos del consorcio, control de gastos y rendición de cuentas ordenada.</p>
-            </article>
-            <article class="service-card" id="mantenimiento">
-                <div class="icon"><i class="fas fa-tools" aria-hidden="true"></i></div>
-                <h3>Mantenimiento edilicio</h3>
-                <p>Seguimiento del estado general del edificio y de sus instalaciones para anticipar problemas.</p>
-            </article>
-            <article class="service-card" id="proveedores">
-                <div class="icon"><i class="fas fa-handshake" aria-hidden="true"></i></div>
-                <h3>Gestión de proveedores</h3>
-                <p>Coordinación de contrataciones y seguimiento del trabajo de cada proveedor del consorcio.</p>
-            </article>
-            <article class="service-card" id="atencion">
-                <div class="icon"><i class="fas fa-users" aria-hidden="true"></i></div>
-                <h3>Atención a propietarios</h3>
-                <p>Canales claros de comunicación para consultas, reclamos y seguimiento de gestiones.</p>
-            </article>
-            <article class="service-card" id="conflictos">
-                <div class="icon"><i class="fas fa-balance-scale" aria-hidden="true"></i></div>
-                <h3>Gestión de conflictos</h3>
-                <p>Abordaje ordenado de diferencias entre propietarios o con proveedores.</p>
-            </article>
-            <article class="service-card" id="reparaciones">
-                <div class="icon"><i class="fas fa-wrench" aria-hidden="true"></i></div>
-                <h3>Seguimiento de reparaciones</h3>
-                <p>Control de cada reparación desde el pedido inicial hasta su finalización.</p>
-            </article>
-            <article class="service-card" id="administrativa">
-                <div class="icon"><i class="fas fa-folder-open" aria-hidden="true"></i></div>
-                <h3>Gestión administrativa del consorcio</h3>
-                <p>Documentación, actas de asamblea y trámites del consorcio siempre al día.</p>
-            </article>
+    <div class="wrap">
+        <ul class="service-list">
+            <li><h3>Liquidación y administración de expensas</h3><p>Cálculo, emisión y seguimiento del pago de expensas de forma ordenada y transparente para todos los propietarios, con el modelo único de la Ciudad y el comprobante de cada gasto en la aplicación.</p></li>
+            <li><h3>Gestión financiera</h3><p>Administración de los fondos del consorcio en cuentas a su nombre, control de gastos, pagos solo por medios bancarios y conciliación mensual publicada antes del día 10.</p></li>
+            <li><h3>Mantenimiento edilicio</h3><p>Seguimiento del estado general del edificio y de sus instalaciones para anticipar problemas, con cada vencimiento técnico controlado.</p></li>
+            <li><h3>Gestión de proveedores</h3><p>Coordinación de contrataciones y seguimiento del trabajo de cada proveedor del consorcio, con legajo completo, retenciones y seguro de su personal.</p></li>
+            <li><h3>Atención a propietarios</h3><p>Canales claros de comunicación para consultas, reclamos y seguimiento de gestiones, con registro escrito de cada respuesta.</p></li>
+            <li><h3>Gestión de conflictos</h3><p>Abordaje ordenado de diferencias entre propietarios o con proveedores, con mediación y constancia escrita.</p></li>
+            <li><h3>Seguimiento de reparaciones</h3><p>Control de cada reparación desde el pedido inicial hasta su finalización, con historial y aviso de garantías vigentes.</p></li>
+            <li><h3>Gestión administrativa del consorcio</h3><p>Documentación, actas de asamblea y trámites del consorcio siempre al día.</p></li>
+        </ul>
+    </div>
+</section>
+
+<section class="section tint" id="alcance" aria-labelledby="alcance-titulo">
+    <div class="wrap">
+        <div class="section-head">
+            <h2 id="alcance-titulo">Lo que cubre el honorario mensual</h2>
+            <p>Muchas discusiones entre un consorcio y su administración nacen de un malentendido: qué estaba incluido y qué no. Por eso está por escrito, con la norma que respalda cada punto.</p>
+        </div>
+        <table class="terms">
+            <thead><tr><th scope="col">Incluido en el honorario</th><th scope="col">Respaldo normativo</th></tr></thead>
+            <tbody>
+<tr><td>Liquidación mensual de expensas y emisión de recibos<small>Con el detalle completo de ingresos, egresos, personal, seguros y juicios.</small></td><td class="norma">Ley 941, art. 9 inc. l y art. 10 · CCyCN, art. 2067 inc. d</td></tr>
+<tr><td>Liquidación de sueldos del personal y cargas sociales<small>Recibos, F.931, aportes y contribuciones, sindicato y ART.</small></td><td class="norma">CCyCN, art. 2067 inc. g</td></tr>
+<tr><td>Pago a proveedores y conciliación bancaria<small>Todos los fondos en cuenta a nombre del consorcio; pagos solo por medios bancarios.</small></td><td class="norma">Ley 941, art. 9 inc. h</td></tr>
+<tr><td>Atención de reclamos de propietarios<small>Por escrito y con registro en la aplicación.</small></td><td class="norma">Ley 941, art. 9 inc. t</td></tr>
+<tr><td>Gestión de morosidad simple<small>Avisos, intimaciones extrajudiciales y acuerdos de pago, antes de cualquier instancia judicial.</small></td><td class="norma">CCyCN, art. 2067 inc. d</td></tr>
+<tr><td>Convocatoria y asistencia a una asamblea ordinaria anual<small>Orden del día, convocatoria, conducción y acta.</small></td><td class="norma">CCyCN, art. 2067 inc. a · Ley 941, art. 9 inc. j</td></tr>
+<tr><td>Rendición de cuentas<small>Periódica, más la rendición anual documentada dentro de los 60 días del cierre del ejercicio.</small></td><td class="norma">CCyCN, art. 2067 inc. e</td></tr>
+<tr><td>Conservación de partes comunes y mantenimientos obligatorios<small>Matafuegos, tanques de agua, control de plagas, ascensores e instalaciones, con sus vencimientos.</small></td><td class="norma">Ley 941, art. 9 inc. b · CCyCN, art. 2067 inc. c</td></tr>
+<tr><td>Seguros del edificio, del personal y de terceros<small>Contratación, renovación y control de vigencia.</small></td><td class="norma">Ley 941, art. 9 inc. c · CCyCN, art. 2067 inc. h</td></tr>
+<tr><td>Libros y documentación del consorcio<small>Libros rubricados al día y archivo con acceso para los propietarios.</small></td><td class="norma">Ley 941, art. 9 incs. d y f · CCyCN, art. 2067 inc. i</td></tr>
+<tr><td>Aviso de reclamos administrativos o judiciales<small>Comunicación a los propietarios dentro de las 48 horas.</small></td><td class="norma">CCyCN, art. 2067 inc. k · Ley 941, art. 9 inc. p</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="section" aria-labelledby="adicionales-titulo">
+    <div class="wrap cols-2">
+        <div>
+            <h2 id="adicionales-titulo">Servicios adicionales</h2>
+            <p class="muted">Se cobran solo cuando efectivamente se prestan, con el valor que la asamblea apruebe junto con el honorario mensual. Cada uno figura detallado en la liquidación del mes en que se presta.</p>
+            <table class="terms"><tbody>
+<tr><td><strong>Asambleas extraordinarias</strong><small>Convocatoria, orden del día, asistencia y redacción del acta.</small></td></tr>
+<tr><td><strong>Juicios y cobranza judicial</strong><small>Coordinación con el abogado, documentación, seguimiento y asistencia a audiencias.</small></td></tr>
+<tr><td><strong>Mediaciones</strong><small>Preparación de antecedentes y asistencia a audiencias.</small></td></tr>
+<tr><td><strong>Oficios judiciales o administrativos</strong><small>Contestación documentada en plazo.</small></td></tr>
+<tr><td><strong>Gestiones ante ARCA y ANSES</strong><small>Altas, bajas, certificaciones y trámites especiales.</small></td></tr>
+<tr><td><strong>Obras extraordinarias</strong><small>Pliego, comparación de ofertas, contratación con el módulo de Contrataciones y control de obra.</small></td></tr>
+<tr><td><strong>Rendición final y traspaso</strong><small>Informe de cierre con conciliación final y transición asistida a la nueva administración.</small></td></tr>
+            </tbody></table>
+        </div>
+        <div>
+            <h2>A cargo de quien lo solicita</h2>
+            <p class="muted"><strong>Certificado de deudas y créditos.</strong> Emitido dentro de los 3 días hábiles del pedido, con reclamos en curso y seguros vigentes. Habitual en ventas de unidades; lo abona el solicitante, no el consorcio.</p>
+            <h2 style="margin-top:1.4em;">Lo que nunca forma parte de mis honorarios</h2>
+            <p class="muted">Honorarios de abogados, escribanos, contadores o peritos; tasas, sellados, cartas documento y rúbrica de libros. Son gastos del consorcio, se pagan contra comprobante y aparecen en la liquidación con su nombre y su importe. Nada queda mezclado con lo que cobro yo.</p>
+            <p class="muted">Conforme al art. 14 de la Ley 941, los honorarios y los adicionales se acuerdan con la asamblea y constan en acta. Ningún adicional se cobra sin esa aprobación. La entrega de libros, fondos y documentación al finalizar la gestión se hace siempre dentro de los 15 días hábiles que fija la ley, sin condicionarla a ningún pago.</p>
         </div>
     </div>
 </section>
 
-<section class="cta-final" aria-labelledby="cta-servicios">
-    <div class="container">
-        <h2 id="cta-servicios">¿Querés conversar sobre estos servicios para tu consorcio?</h2>
-        <div class="cta-final-buttons">
-            <a href="/pages/contacto.html" class="btn btn-gold">Solicitar propuesta</a>
-            <a href="https://wa.me/541164410369" class="btn btn-whatsapp" target="_blank" rel="noopener">
-                <i class="fab fa-whatsapp" aria-hidden="true"></i> Contactar por WhatsApp
-            </a>
-        </div>
-    </div>
-</section>
 </main>
 
-<footer>
-    <div class="container">
+<section class="cta-final on-dark" aria-labelledby="cta-final-titulo">
+    <div class="wrap">
+        <h2 id="cta-final-titulo">¿Querés conversar sobre estos servicios para tu consorcio?</h2>
+        <p>Les preparo una propuesta con el honorario y su alcance por escrito, para que comparen con lo que tienen hoy.</p>
+        <div class="actions">
+            <a href="/pages/contacto.html" class="btn btn-gold">Solicitar propuesta</a>
+            <a href="https://wa.me/5491164410369" class="btn btn-wa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3C4.1 15 3.7 13.5 3.7 12c0-4.6 3.7-8.3 8.3-8.3s8.3 3.7 8.3 8.3-3.7 8.2-8.3 8.2z"/></svg> Contactar por WhatsApp</a>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="wrap">
         <div class="footer-grid">
             <div>
                 <div class="footer-brand">Administración NAKEN</div>
-                <p style="font-size:0.9rem;">Administración de Consorcios en CABA<br>RPA 20066</p>
+                <p>Administración de Consorcios en CABA<br>Lic. Sebastián R. Espeche · RPA 20066</p>
             </div>
             <div>
                 <h4>Navegación</h4>
                 <ul>
                     <li><a href="/">Inicio</a></li>
                     <li><a href="/pages/servicios.html">Servicios</a></li>
+                    <li><a href="/pages/metodo.html">Método y herramientas</a></li>
                     <li><a href="/pages/nosotros.html">Nosotros</a></li>
+                    <li><a href="/pages/cambiar-administrador.html">Cambiar de administrador</a></li>
                     <li><a href="/pages/preguntas-frecuentes.html">Preguntas frecuentes</a></li>
                     <li><a href="/pages/contacto.html">Contacto</a></li>
                 </ul>
             </div>
             <div>
-                <h4>Legal</h4>
+                <h4>Propietarios</h4>
+                <ul>
+                    <li><a href="https://app.administracionnaken.com.ar/">Ingresar a la aplicación</a></li>
+                </ul>
+                <h4 style="margin-top:22px;">Legal</h4>
                 <ul>
                     <li><a href="/pages/legal.html#privacidad">Política de privacidad</a></li>
                     <li><a href="/pages/legal.html#aviso-legal">Aviso legal</a></li>
@@ -147,21 +212,20 @@
             <div>
                 <h4>Contacto</h4>
                 <ul>
-                    <li><a href="tel:+541164410369">+54 11 6441-0369</a></li>
+                    <li><a href="tel:+5491164410369">11 6441-0369</a></li>
                     <li><a href="mailto:gerencia@administracionnaken.com.ar">gerencia@administracionnaken.com.ar</a></li>
+                    <li>Av. Monroe 3139, Colegiales, CABA</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <span>&copy; <span id="year"></span> Administración NAKEN — RPA 20066</span>
+            <span>&copy; <span id="year">2026</span> Administración NAKEN — RPA 20066</span>
         </div>
     </div>
 </footer>
 
-<a href="https://wa.me/541164410369" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-    <i class="fab fa-whatsapp" aria-hidden="true"></i>
-</a>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-<script src="/js/main.js"></script>
+<a href="https://wa.me/5491164410369" class="wa-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3C4.1 15 3.7 13.5 3.7 12c0-4.6 3.7-8.3 8.3-8.3s8.3 3.7 8.3 8.3-3.7 8.2-8.3 8.2z"/></svg></a>
+
+<script src="/js/main.js?v=2026-10-19"></script>
 </body>
 </html>
