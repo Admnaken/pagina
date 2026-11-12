@@ -122,3 +122,17 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+/* ---------- Copiar modelos (guía) ---------- */
+document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-copy]');
+    if (!b) return;
+    var el = document.getElementById(b.getAttribute('data-copy'));
+    if (!el) return;
+    var texto = el.innerText;
+    var listo = function () { var t = b.textContent; b.textContent = 'Copiado'; b.classList.add('ok'); setTimeout(function () { b.textContent = t; b.classList.remove('ok'); }, 2000); };
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(texto).then(listo, function () { seleccionar(el); });
+    } else { seleccionar(el); }
+    function seleccionar(n) { var r = document.createRange(); r.selectNodeContents(n); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Texto seleccionado: Ctrl+C'; }
+});
