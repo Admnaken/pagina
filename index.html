@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Spectral:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/styles.css?v=2026-11-07">
+<link rel="stylesheet" href="/css/styles.css?v=2026-11-12">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -104,7 +104,7 @@
             <a href="/pages/cambiar-administrador.html">Cambiar de administrador</a>
             <a href="/pages/preguntas-frecuentes.html">Preguntas frecuentes</a>
             <a href="/pages/contacto.html">Contacto</a>
-            <a href="/pages/contacto.html" class="btn">Solicitar propuesta</a>
+            <a href="/pages/contacto.html?motivo=diagnostico" class="btn">Diagnóstico gratis</a>
         </nav>
         <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
             <span></span><span></span><span></span>
@@ -121,9 +121,10 @@
             <h1>Administración de Consorcios en CABA</h1>
             <p class="hero-sub">Gestión profesional, transparente y cercana para edificios y consorcios de la Ciudad de Buenos Aires. Con un método donde nada queda librado a la memoria.</p>
             <div class="actions">
-                <a href="/pages/contacto.html" class="btn btn-gold">Solicitar propuesta</a>
-                <a href="/pages/servicios.html" class="btn btn-line">Conocer nuestros servicios</a>
+                <a href="/pages/contacto.html?motivo=diagnostico" class="btn btn-gold">Pedir diagnóstico de expensas (gratis)</a>
+                <a href="#herramientas" class="btn btn-line">Ver las herramientas</a>
             </div>
+            <p class="hero-note">Envíen la última liquidación y en 72 horas reciben un informe escrito. Sin compromiso.</p>
             <p class="hero-sign"><strong>Lic. Sebastián R. Espeche</strong>, Capitán de Corbeta (RE), ex jefe de la Base Antártica Melchior.</p>
         </div>
         <figure class="log" aria-label="Una noche cualquiera en un edificio">
@@ -210,8 +211,80 @@
             </li>
         </ol>
         <div class="actions" style="margin-top:36px;">
-            <a href="/pages/metodo.html" class="btn btn-gold">Ver cómo funciona cada herramienta</a>
+            <a href="#herramientas" class="btn btn-gold">Verlas por dentro</a>
             <a href="/pages/contacto.html?motivo=demostracion" class="btn btn-line">Pedir una demostración</a>
+        </div>
+    </div>
+</section>
+
+<section class="section vitrina" id="herramientas" aria-labelledby="vitrina-titulo">
+    <div class="wrap">
+        <div class="section-head">
+            <h2 id="vitrina-titulo">Así se ven por dentro</h2>
+            <p>Esto es lo que usa la administración y lo que ve el consejo. Capturas de las aplicaciones funcionando con un consorcio de ejemplo; la planilla de retenciones está reproducida. Todos los datos son ficticios.</p>
+        </div>
+        <div class="vitrina-tabs" role="tablist" aria-label="Herramientas de Administración NAKEN">
+            <button type="button" role="tab" id="vit-balance-tab" aria-controls="vit-balance" aria-selected="true">Balance Cero</button>
+            <button type="button" role="tab" id="vit-contrataciones-tab" aria-controls="vit-contrataciones" aria-selected="false" tabindex="-1">Contrataciones</button>
+            <button type="button" role="tab" id="vit-retenciones-tab" aria-controls="vit-retenciones" aria-selected="false" tabindex="-1">Retenciones</button>
+            <button type="button" role="tab" id="vit-app-tab" aria-controls="vit-app" aria-selected="false" tabindex="-1">App de propietarios</button>
+        </div>
+        <div class="vitrina-panel" role="tabpanel" id="vit-balance" aria-labelledby="vit-balance-tab">
+            <figure class="vitrina-shot">
+                <div class="browser"><div class="browser-bar"><span></span><span></span><span></span><em>balancecero.administracionnaken.com.ar</em></div>
+                    <img src="/assets/images/apps/balance-cero-toma-de-posesion.webp" alt="Balance Cero: checklist de toma de posesión de un consorcio con 7 de 11 pasos completados" width="1440" height="922" loading="lazy" decoding="async"></div>
+            </figure>
+            <div class="vitrina-text">
+                <p class="vitrina-when">El día que se recibe el edificio</p>
+                <h3>Balance Cero</h3>
+                <p>Cada trámite de la toma de posesión, con su fundamento legal, el organismo y el estado: hecho, en curso o pendiente. El consejo ve el avance real, no una promesa.</p>
+                <ul><li>Asamblea, banco, ARCA, AGIP, AGC, ART y SUTERH, paso por paso.</li><li>Reclamo al administrador saliente con plazos e intimaciones.</li><li>Auditoría técnica y Acta de Recepción con reserva.</li></ul>
+                <a href="/pages/metodo.html#balance-cero">Cómo funciona Balance Cero →</a>
+            </div>
+        </div>
+        <div class="vitrina-panel" role="tabpanel" id="vit-contrataciones" aria-labelledby="vit-contrataciones-tab">
+            <figure class="vitrina-shot">
+                <div class="browser"><div class="browser-bar"><span></span><span></span><span></span><em>contrataciones.administracionnaken.com.ar</em></div>
+                    <img src="/assets/images/apps/contrataciones-panel-expedientes.webp" alt="Contrataciones: panel con expedientes de proveedores, montos, avance y estado de cada uno" width="1440" height="922" loading="lazy" decoding="async"></div>
+            </figure>
+            <div class="vitrina-text">
+                <p class="vitrina-when">Antes de que un proveedor entre al edificio</p>
+                <h3>Contrataciones</h3>
+                <p>Cada trabajo es un expediente: presupuestos, validación fiscal, contrato, seguro del personal y dos vistos buenos. Si falta un papel, no avanza.</p>
+                <ul><li>Alertas de ofertas vencidas y documentación laboral incompleta.</li><li>Bloquea pagar dos veces la misma factura.</li><li>Avisa si el trabajo se repite mientras sigue en garantía.</li></ul>
+                <a href="/pages/metodo.html#contrataciones">Cómo funciona Contrataciones →</a>
+            </div>
+        </div>
+        <div class="vitrina-panel" role="tabpanel" id="vit-retenciones" aria-labelledby="vit-retenciones-tab">
+            <figure class="vitrina-shot">
+                <div class="browser"><div class="browser-bar"><span></span><span></span><span></span><em>Planilla de Retenciones · Google Sheets</em></div>
+                    <img src="/assets/images/apps/planilla-retenciones-ganancias.webp" alt="Planilla de retenciones: pagos del mes con retención de Ganancias, neto a transferir y número de certificado" width="1440" height="386" loading="lazy" decoding="async"></div>
+            </figure>
+            <div class="vitrina-text">
+                <p class="vitrina-when">Cada pago a un proveedor</p>
+                <h3>Retenciones</h3>
+                <p>La planilla decide, pago por pago, si corresponde retener, cuánto y con qué certificado. El consorcio no hereda deudas impositivas de nadie.</p>
+                <ul><li>Mínimo no sujeto y alícuotas vigentes, cargadas por el contador.</li><li>Certificado numerado para cada retención.</li><li>Cada fila queda vinculada a un único pago del expediente.</li></ul>
+                <a href="/pages/metodo.html#retenciones">Cómo funciona Retenciones →</a>
+            </div>
+        </div>
+        <div class="vitrina-panel es-app" role="tabpanel" id="vit-app" aria-labelledby="vit-app-tab">
+            <figure class="vitrina-shot">
+                <div class="browser"><div class="browser-bar"><span></span><span></span><span></span><em>app.administracionnaken.com.ar</em></div>
+                    <img src="/assets/images/apps/app-propietarios-facturas-del-mes.webp" alt="App de propietarios: facturas del mes con rubro, proveedor, importe y enlace al comprobante" width="1440" height="922" loading="lazy" decoding="async"></div>
+                    <div class="phone"><img src="/assets/images/apps/app-propietarios-celular.webp" alt="App de propietarios en el celular: perfil de la unidad y accesos a expensas, facturas, reclamos y fondo de reserva" width="520" height="989" loading="lazy" decoding="async"></div>
+            </figure>
+            <div class="vitrina-text">
+                <p class="vitrina-when">Todos los días, desde el celular</p>
+                <h3>App de propietarios</h3>
+                <p>Cada propietario ve su liquidación, cada factura con su comprobante, el fondo de reserva y la conciliación bancaria. Sin pedirlo, sin esperar a la asamblea.</p>
+                <ul><li>Factura por factura, con el PDF del comprobante.</li><li>Reclamos y consultas por escrito, con fecha y respuesta.</li><li>Libro banco, caja, seguros y juicios a la vista.</li></ul>
+                <a href="/pages/metodo.html#aplicacion">Cómo funciona la aplicación →</a>
+            </div>
+        </div>
+        <div class="vitrina-cta">
+            <p><strong>¿Quieren saber cómo está hoy su consorcio?</strong> Envíen la última liquidación de expensas y en 72 horas reciben un diagnóstico escrito. Gratis y sin compromiso.</p>
+            <a href="/pages/contacto.html?motivo=diagnostico" class="btn btn-gold">Pedir diagnóstico de expensas (gratis)</a>
         </div>
     </div>
 </section>
@@ -305,9 +378,9 @@
         </div>
         <div class="offers">
             <div class="offer">
-                <h3>Envíenme su última liquidación de expensas</h3>
+                <h3>Envíenme su última liquidación de expensas <small class="gratis">Gratis</small></h3>
                 <p>En 72 horas les devuelvo un diagnóstico escrito de una página con lo que observo: gastos sin respaldo, retenciones, vencimientos y riesgos. Es de ustedes, me elijan o no.</p>
-                <a href="/pages/contacto.html?motivo=diagnostico">Pedir el diagnóstico</a>
+                <a href="/pages/contacto.html?motivo=diagnostico">Pedir diagnóstico de expensas (gratis)</a>
             </div>
             <div class="offer">
                 <h3>Vean las herramientas funcionando</h3>
@@ -413,7 +486,8 @@
         <h2 id="cta-final-titulo">¿Están buscando una nueva administración para su consorcio?</h2>
         <p>Conversemos sobre las necesidades de su edificio y evaluemos una propuesta de administración. El día que decidan, asumo la guardia.</p>
         <div class="actions">
-            <a href="/pages/contacto.html" class="btn btn-gold">Solicitar propuesta</a>
+            <a href="/pages/contacto.html?motivo=diagnostico" class="btn btn-gold">Pedir diagnóstico de expensas (gratis)</a>
+            <a href="/pages/contacto.html?motivo=propuesta" class="btn btn-line">Solicitar propuesta</a>
             <a href="https://wa.me/5491164410369" class="btn btn-wa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3C4.1 15 3.7 13.5 3.7 12c0-4.6 3.7-8.3 8.3-8.3s8.3 3.7 8.3 8.3-3.7 8.2-8.3 8.2z"/></svg> Contactar por WhatsApp</a>
         </div>
     </div>
@@ -467,6 +541,6 @@
 
 <a href="https://wa.me/5491164410369" class="wa-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3C4.1 15 3.7 13.5 3.7 12c0-4.6 3.7-8.3 8.3-8.3s8.3 3.7 8.3 8.3-3.7 8.2-8.3 8.2z"/></svg></a>
 
-<script src="/js/main.js?v=2026-11-07"></script>
+<script src="/js/main.js?v=2026-11-12"></script>
 </body>
 </html>

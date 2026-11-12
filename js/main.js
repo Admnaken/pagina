@@ -59,12 +59,38 @@ document.addEventListener('DOMContentLoaded', function () {
         if (dest) abrir(dest, true);
     }
 
+    // Vitrina de herramientas: solapas accesibles (sin JS se ven todas, una debajo de otra).
+    var vit = document.querySelector('.vitrina');
+    if (vit) {
+        var tabs = Array.prototype.slice.call(vit.querySelectorAll('[role="tab"]'));
+        var mostrar = function (tab, foco) {
+            tabs.forEach(function (t) {
+                var sel = t === tab;
+                t.setAttribute('aria-selected', sel ? 'true' : 'false');
+                t.tabIndex = sel ? 0 : -1;
+                document.getElementById(t.getAttribute('aria-controls')).hidden = !sel;
+            });
+            if (foco) tab.focus();
+        };
+        vit.classList.add('js-vitrina');
+        tabs.forEach(function (t, i) {
+            t.addEventListener('click', function () { mostrar(t); });
+            t.addEventListener('keydown', function (e) {
+                var n = e.key === 'ArrowRight' ? i + 1 : e.key === 'ArrowLeft' ? i - 1 : null;
+                if (n === null) return;
+                e.preventDefault();
+                mostrar(tabs[(n + tabs.length) % tabs.length], true);
+            });
+        });
+        mostrar(tabs[0]);
+    }
+
     /* ---------- Formulario de contacto ---------- */
     var form = document.getElementById('contactForm');
     if (!form) return;
 
     // ?motivo=diagnostico preselecciona el motivo (botones "Pónganla a prueba").
-    var motivos = { propuesta: 'Propuesta de administración', diagnostico: 'Diagnóstico de la última liquidación', demostracion: 'Ver las herramientas funcionando', recorrida: 'Recorrida del edificio' };
+    var motivos = { propuesta: 'Propuesta de administración', diagnostico: 'Diagnóstico gratis de expensas (última liquidación)', demostracion: 'Ver las herramientas funcionando', recorrida: 'Recorrida del edificio' };
     var m = new URLSearchParams(location.search).get('motivo');
     if (m && motivos[m] && form.motivo) form.motivo.value = motivos[m];
 
